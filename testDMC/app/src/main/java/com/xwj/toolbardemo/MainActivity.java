@@ -30,6 +30,10 @@ import android.widget.Toast;
 import com.xwj.toolbardemo.widget.PagerSlidingTabStrip;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.List;
+
+import sc.music.adapter.PagerFragmentAdapter;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -39,6 +43,11 @@ public class MainActivity extends ActionBarActivity {
     private PagerSlidingTabStrip mPagerSlidingTabStrip;
     private ViewPager mViewPager;
     private Toolbar mToolbar; //工具条
+
+    //直接分配一次内存，是不是重复了啊
+    private List<Fragment> mFragmentList = new ArrayList<Fragment>();
+    private PagerFragmentAdapter mFragmentAdapter;
+
 
     Context mContext;
     @Override
@@ -116,12 +125,17 @@ public class MainActivity extends ActionBarActivity {
         mDrawerLayout.setDrawerListener(mDrawerToggle);
 
         mPagerSlidingTabStrip = (PagerSlidingTabStrip) findViewById(R.id.tabs);
-        //就是ui上的一个pageer组件
+        //就是ui上的一个pager组件
         mViewPager = (ViewPager) findViewById(R.id.pager);
-        mViewPager.setAdapter(new MyPagerAdapter(getSupportFragmentManager(),mContext));
+        /*
+        * new MyPagerAdapter(getSupportFragmentManager(),mContext
+        * */
+        mFragmentAdapter = new PagerFragmentAdapter(getSupportFragmentManager(), mContext,mFragmentList);
+        mViewPager.setAdapter(mFragmentAdapter);
         mPagerSlidingTabStrip.setViewPager(mViewPager);
         mPagerSlidingTabStrip.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
+            //选中每个pager
             @Override
             public void onPageSelected(int arg0) {
                // colorChange(arg0);
@@ -315,6 +329,7 @@ public class MainActivity extends ActionBarActivity {
             return TITLES[position];
         }
 
+        //获取每个viewpager上的fragement
         @Override
         public Fragment getItem(int position) {
             return BaseCardFragment.newInstance(position);
