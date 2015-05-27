@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <string-array name="pager_title">
+        <item>本地音乐</item>
+        <item>我的最爱</item>
+        <item>网络音乐</item>
+        <item>DMR设备</item>
+    </string-array>
+
+
+
+</resources>
