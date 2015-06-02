@@ -1,4 +1,4 @@
-package sc.music.adapter;
+package sc.music.ui.adapter;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;

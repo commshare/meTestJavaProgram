@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.xwj.toolbardemo.widget;
+package sc.music.ui.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;

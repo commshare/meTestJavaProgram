@@ -1,4 +1,4 @@
-package com.xwj.toolbardemo;
+package sc.music.ui.activity;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -27,13 +27,15 @@ import android.view.ViewConfiguration;
 import android.view.Window;
 import android.widget.Toast;
 
+import com.xwj.toolbardemo.BaseCardFragment;
+import com.xwj.toolbardemo.R;
 import com.xwj.toolbardemo.widget.PagerSlidingTabStrip;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
-import sc.music.adapter.PagerFragmentAdapter;
+import sc.music.ui.adapter.PagerFragmentAdapter;
 
 
 public class MainActivity extends ActionBarActivity {
