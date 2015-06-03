@@ -4,3 +4,9 @@ testDMC/.idea/workspace.xml
 testDMC/.idea/libraries
 testDMC/.DS_Store
 testDMC/build
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
