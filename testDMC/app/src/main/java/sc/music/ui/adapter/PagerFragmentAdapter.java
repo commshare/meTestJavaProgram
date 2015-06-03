@@ -21,7 +21,7 @@ public class PagerFragmentAdapter extends FragmentPagerAdapter {
     //;// {"推荐", "分类", "本月热榜", "热门推荐", "专栏", "热门收藏", "随缘"};
 
     //内存要在这里分配的啊
-    List<Fragment> fragmentList = new ArrayList<Fragment>();
+    List<Fragment> fragmentList ;//= new ArrayList<Fragment>();
 
     public PagerFragmentAdapter(FragmentManager fm,Context mContext,List<Fragment> fragmentList) {
         super(fm);
@@ -33,10 +33,24 @@ public class PagerFragmentAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
         return fragmentList.get(position);
+//        switch(pos) {
+//
+////            case 0: return FirstFragment.newInstance("FirstFragment, Instance 1");
+////            case 1: return SecondFragment.newInstance("SecondFragment, Instance 1");
+////            case 2: return ThirdFragment.newInstance("ThirdFragment, Instance 1");
+////            case 3: return ThirdFragment.newInstance("ThirdFragment, Instance 2");
+////            case 4: return ThirdFragment.newInstance("ThirdFragment, Instance 3");
+////            default: return ThirdFragment.newInstance("ThirdFragment, Default");
+//        }
     }
 
     @Override
     public int getCount() {
         return fragmentList.size();
+    }
+
+    @Override
+    public CharSequence getPageTitle(int position) {
+        return TITLES[position];
     }
 }

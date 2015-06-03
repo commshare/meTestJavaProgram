@@ -49,7 +49,7 @@ public class MainActivity extends ActionBarActivity {
     private Toolbar mToolbar; //工具条
 
     //直接分配一次内存，是不是重复了啊
-    private List<Fragment> mFragmentList = new ArrayList<Fragment>();
+    private List<Fragment> mFragmentList ;
     private PagerFragmentAdapter mFragmentAdapter;
 
 
@@ -134,9 +134,18 @@ public class MainActivity extends ActionBarActivity {
         /*
         * new MyPagerAdapter(getSupportFragmentManager(),mContext
         * */
+        mFragmentList = new ArrayList<Fragment>();
         mFragmentList.add(new LocalMusicFragment());
+        mFragmentList.add(BaseCardFragment.newInstance(1));
+        mFragmentList.add(BaseCardFragment.newInstance(2));
+        mFragmentList.add(BaseCardFragment.newInstance(3));
         mFragmentAdapter = new PagerFragmentAdapter(getSupportFragmentManager(), mContext,mFragmentList);
+      //  mViewPager.setAdapter(new MyPagerAdapter(getSupportFragmentManager(),mContext));//mFragmentAdapter);
         mViewPager.setAdapter(mFragmentAdapter);
+        if(mViewPager==null)
+            Log.e("zb","viewpager is null ");
+        if(mPagerSlidingTabStrip==null)
+            Log.e("zb","mPagerSlidingTabStrip is null");
         mPagerSlidingTabStrip.setViewPager(mViewPager);
         mPagerSlidingTabStrip.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
@@ -319,7 +328,7 @@ public class MainActivity extends ActionBarActivity {
         Context mContext;
         private  String[] TITLES ;//=
         ;// {"推荐", "分类", "本月热榜", "热门推荐", "专栏", "热门收藏", "随缘"};
-
+        private int title_length;
         public MyPagerAdapter(FragmentManager fm) {
             super(fm);
         }
@@ -328,6 +337,8 @@ public class MainActivity extends ActionBarActivity {
             super(fm);
             this.mContext=mContext;
             TITLES = mContext.getResources().getStringArray(R.array.pager_title);//因为定义在arrays.xml中
+            title_length=TITLES.length;
+            Log.e("zb","title_length"+title_length);
         }
         @Override
         public CharSequence getPageTitle(int position) {
@@ -342,7 +353,7 @@ public class MainActivity extends ActionBarActivity {
 
         @Override
         public int getCount() {
-            return TITLES.length;
+            return title_length;  // TITLES.length;
         }
     }
 }
