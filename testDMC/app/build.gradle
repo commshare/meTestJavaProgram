@@ -5,8 +5,8 @@ android {
     buildToolsVersion "21.1.1"
 
     defaultConfig {
-        applicationId "com.xwj.toolbardemo"
-        minSdkVersion 9
+        applicationId "sc.testdmc"
+        minSdkVersion 14
         targetSdkVersion 21
         versionCode 1
         versionName "1.0"
@@ -23,4 +23,26 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:21.0.3'
     compile 'com.android.support:palette-v7:21.0.3'
+
+    //Cling library
+    compile files('libs/cling-core-2.0.1.jar')
+    compile files('libs/cling-support-2.0.1.jar')
+    compile files('libs/seamless-http-1.1.0.jar')
+    compile files('libs/seamless-util-1.1.0.jar')
+    compile files('libs/seamless-xml-1.1.0.jar')
+    //Jetty library
+    compile files('libs/jetty-client-8.1.12.v20130726.jar')
+    compile files('libs/jetty-continuation-8.1.12.v20130726.jar')
+    compile files('libs/jetty-http-8.1.12.v20130726.jar')
+    compile files('libs/jetty-io-8.1.12.v20130726.jar')
+    compile files('libs/jetty-security-8.1.12.v20130726.jar')
+    compile files('libs/jetty-server-8.1.12.v20130726.jar')
+    compile files('libs/jetty-servlet-8.1.12.v20130726.jar')
+    compile files('libs/jetty-util-8.1.12.v20130726.jar')
+    compile files('libs/servlet-api-3.0.jar')
+    compile files('libs/slf4j-jdk14-1.7.5.jar')
+
+    //Android
+    compile 'com.android.support:support-v4:21.0.+'
+    compile 'com.android.support:support-v13:21.0.0'
 }
