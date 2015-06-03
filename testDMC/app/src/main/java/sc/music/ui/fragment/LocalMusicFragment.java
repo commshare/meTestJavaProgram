@@ -6,17 +6,9 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.view.View;
-import android.widget.ImageButton;
-import android.widget.ListView;
 
-import org.fourthline.cling.support.messagebox.model.Message;
+import sc.droid.dmc.R;
 
-import java.util.List;
-
-import sc.music.ui.adapter.MySectionIndexer;
-import sc.music.ui.iface.PageAction;
-import sc.music.ui.layout.LoadRelativeLayout;
-import sc.music.ui.view.BladeView;
 
 /**
  * Created by Administrator on 2015/5/27.
@@ -29,7 +21,8 @@ public class LocalMusicFragment extends Fragment implements AbsListView.OnScroll
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return super.onCreateView(inflater, container, savedInstanceState);
+      //  return super.onCreateView(inflater, container, savedInstanceState);
+        return  inflater.inflate(R.layout.simple_listview_layout,container,false);
     }
 
     @Override

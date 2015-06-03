@@ -2,13 +2,13 @@ package fi.iki.elonen;
 
 import java.io.IOException;
 
-import elonen.*;
-import elonen.NanoHTTPD;
+import fi.iki.elonen.*;
+import fi.iki.elonen.NanoHTTPD;
 
 public class ServerRunner {
     public static void run(Class serverClass) {
         try {
-            executeInstance((elonen.NanoHTTPD) serverClass.newInstance());
+            executeInstance((fi.iki.elonen.NanoHTTPD) serverClass.newInstance());
         } catch (Exception e) {
             e.printStackTrace();
         }

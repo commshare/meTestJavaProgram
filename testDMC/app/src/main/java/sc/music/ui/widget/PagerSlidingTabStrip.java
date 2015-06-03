@@ -38,7 +38,7 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.xwj.toolbardemo.R;
+import sc.droid.dmc.R;
 
 import java.util.Locale;
 

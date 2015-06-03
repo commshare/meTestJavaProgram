@@ -17,6 +17,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    packagingOptions {
+        exclude 'org/eclipse/jetty/servlet/jmx/ServletContextHandler-mbean.properties'
+        exclude 'META-INF/beans.xml'
+    }
+
 }
 
 dependencies {

@@ -27,6 +27,8 @@ import android.widget.FrameLayout;
 import android.widget.FrameLayout.LayoutParams;
 import android.widget.TextView;
 
+import sc.droid.dmc.R;
+
 public class BaseCardFragment extends Fragment {
     private static final String ARG_POSITION = "position";
 

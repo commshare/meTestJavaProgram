@@ -14,11 +14,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
 
-import elonen.*;
-import elonen.NanoHTTPD;
-import elonen.ServerRunner;
 
-public class SimpleWebServer extends elonen.NanoHTTPD {
+
+public class SimpleWebServer extends fi.iki.elonen.NanoHTTPD {
     /**
      * Hashtable mapping (String)FILENAME_EXTENSION -> (String)MIME_TYPE
      */
@@ -133,12 +131,12 @@ public class SimpleWebServer extends elonen.NanoHTTPD {
 
             // Prohibit getting out of current directory
             if (uri.startsWith("src/main") || uri.endsWith("src/main") || uri.contains("../"))
-                res = new Response(Response.Status.FORBIDDEN, elonen.NanoHTTPD.MIME_PLAINTEXT, "FORBIDDEN: Won't serve ../ for security reasons.");
+                res = new Response(Response.Status.FORBIDDEN, fi.iki.elonen.NanoHTTPD.MIME_PLAINTEXT, "FORBIDDEN: Won't serve ../ for security reasons.");
         }
 
         File f = new File(homeDir, uri);
         if (res == null && !f.exists()) {
-            res = new Response(Response.Status.NOT_FOUND, elonen.NanoHTTPD.MIME_PLAINTEXT, "Error 404, file not found.");
+            res = new Response(Response.Status.NOT_FOUND, fi.iki.elonen.NanoHTTPD.MIME_PLAINTEXT, "Error 404, file not found.");
         }
 
         // List the directory, if necessary
@@ -147,7 +145,7 @@ public class SimpleWebServer extends elonen.NanoHTTPD {
             // directory, send a redirect.
             if (!uri.endsWith("/")) {
                 uri += "/";
-                res = new Response(Response.Status.REDIRECT, elonen.NanoHTTPD.MIME_HTML, "<html><body>Redirected: <a href=\"" + uri + "\">" + uri
+                res = new Response(Response.Status.REDIRECT, fi.iki.elonen.NanoHTTPD.MIME_HTML, "<html><body>Redirected: <a href=\"" + uri + "\">" + uri
                         + "</a></body></html>");
                 res.addHeader("Location", uri);
             }
@@ -162,7 +160,7 @@ public class SimpleWebServer extends elonen.NanoHTTPD {
                     // No index file, list the directory if it is readable
                     res = new Response(listDirectory(uri, f));
                 } else {
-                    res = new Response(Response.Status.FORBIDDEN, elonen.NanoHTTPD.MIME_PLAINTEXT, "FORBIDDEN: No directory listing.");
+                    res = new Response(Response.Status.FORBIDDEN, fi.iki.elonen.NanoHTTPD.MIME_PLAINTEXT, "FORBIDDEN: No directory listing.");
                 }
             }
         }
@@ -176,13 +174,13 @@ public class SimpleWebServer extends elonen.NanoHTTPD {
                     mime = MIME_TYPES.get(f.getCanonicalPath().substring(dot + 1).toLowerCase());
                 }
                 if (mime == null) {
-                    mime = elonen.NanoHTTPD.MIME_DEFAULT_BINARY;
+                    mime = fi.iki.elonen.NanoHTTPD.MIME_DEFAULT_BINARY;
                 }
                 if(res == null)
                     res = serveFile(f, mime, header);
             }
         } catch (IOException ioe) {
-            res = new Response(Response.Status.FORBIDDEN, elonen.NanoHTTPD.MIME_PLAINTEXT, "FORBIDDEN: Reading file failed.");
+            res = new Response(Response.Status.FORBIDDEN, fi.iki.elonen.NanoHTTPD.MIME_PLAINTEXT, "FORBIDDEN: Reading file failed.");
         }
         return res;
     }
@@ -217,7 +215,7 @@ public class SimpleWebServer extends elonen.NanoHTTPD {
             long fileLen = f.length();
             if (range != null && startFrom >= 0) {
                 if (startFrom >= fileLen) {
-                    res = new Response(Response.Status.RANGE_NOT_SATISFIABLE, elonen.NanoHTTPD.MIME_PLAINTEXT, "");
+                    res = new Response(Response.Status.RANGE_NOT_SATISFIABLE, fi.iki.elonen.NanoHTTPD.MIME_PLAINTEXT, "");
                     res.addHeader("Content-Range", "bytes 0-0/" + fileLen);
                     res.addHeader("ETag", etag);
                 } else {
@@ -381,6 +379,6 @@ public class SimpleWebServer extends elonen.NanoHTTPD {
             }
         }
 
-        ServerRunner.executeInstance(new elonen.SimpleWebServer(host, port, wwwroot, quiet));
+        ServerRunner.executeInstance(new fi.iki.elonen.SimpleWebServer(host, port, wwwroot, quiet));
     }
 }

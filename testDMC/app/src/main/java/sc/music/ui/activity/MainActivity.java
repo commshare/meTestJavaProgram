@@ -29,6 +29,8 @@ import android.widget.Toast;
 
 import com.xwj.toolbardemo.BaseCardFragment;
 
+import sc.droid.dmc.R;
+import sc.music.ui.fragment.LocalMusicFragment;
 import sc.music.ui.widget.PagerSlidingTabStrip;
 
 import java.lang.reflect.Field;
@@ -73,7 +75,7 @@ public class MainActivity extends ActionBarActivity {
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         // toolbar.setLogo(R.drawable.ic_launcher);
         // 标题的文字需在setSupportActionBar之前，不然会无效
-        mToolbar.setTitle("ToolbarDemo");
+        mToolbar.setTitle("测试DMC");
         // toolbar.setSubtitle("副标题");
         setSupportActionBar(mToolbar);
         /* 这些通过ActionBar来设置也是一样的，注意要在setSupportActionBar(toolbar);之后，不然就报错了 */
@@ -132,6 +134,7 @@ public class MainActivity extends ActionBarActivity {
         /*
         * new MyPagerAdapter(getSupportFragmentManager(),mContext
         * */
+        mFragmentList.add(new LocalMusicFragment());
         mFragmentAdapter = new PagerFragmentAdapter(getSupportFragmentManager(), mContext,mFragmentList);
         mViewPager.setAdapter(mFragmentAdapter);
         mPagerSlidingTabStrip.setViewPager(mViewPager);
