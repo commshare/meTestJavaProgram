@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/device_fragment_layout"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/label_cds"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Context Directory"
+        style="@style/deviceListLabel"
+        />
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        style="@style/deviceListSeparator"
+        />
+    <fragment
+        android:id="@+id/cdsFragment"
+        android:name="sc.music.ui.fragment.CDSDeviceFragment"
+        android:layout_weight="1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout="@layout/sub_device_fragment_layout"
+        />
+    <TextView
+        android:id="@+id/label_renderer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="Renderer"
+        style="@style/deviceListLabel"
+        />
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        style="@style/deviceListSeparator"
+        />
+    <fragment
+        android:id="@+id/RenderDeviceFragment"
+        android:name="sc.music.ui.fragment.RenderDeviceFragment"
+        android:layout_weight="1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout="@layout/sub_device_fragment_layout"
+        />
+
+</LinearLayout>

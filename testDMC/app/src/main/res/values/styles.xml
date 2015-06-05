@@ -38,6 +38,15 @@
     <item name="suggestionRowLayout">...</item>
         -->
 
+
+
+    </style>
+    <color name="dark">#444444</color>
+    <style name="deviceListLabel">
+        <item name="android:textColor">@color/dark</item>
+    </style>
+    <style name="deviceListSeparator">
+        <item name="android:background">@color/dark</item>
     </style>
 
 </resources>

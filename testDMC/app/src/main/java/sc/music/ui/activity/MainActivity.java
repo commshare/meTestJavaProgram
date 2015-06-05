@@ -30,6 +30,7 @@ import android.widget.Toast;
 import com.xwj.toolbardemo.BaseCardFragment;
 
 import sc.droid.dmc.R;
+import sc.music.ui.fragment.DeviceFragment;
 import sc.music.ui.fragment.LocalMusicFragment;
 import sc.music.ui.widget.PagerSlidingTabStrip;
 
@@ -138,7 +139,7 @@ public class MainActivity extends ActionBarActivity {
         mFragmentList.add(new LocalMusicFragment());
         mFragmentList.add(BaseCardFragment.newInstance(1));
         mFragmentList.add(BaseCardFragment.newInstance(2));
-        mFragmentList.add(BaseCardFragment.newInstance(3));
+        mFragmentList.add(new DeviceFragment());
         mFragmentAdapter = new PagerFragmentAdapter(getSupportFragmentManager(), mContext,mFragmentList);
       //  mViewPager.setAdapter(new MyPagerAdapter(getSupportFragmentManager(),mContext));//mFragmentAdapter);
         mViewPager.setAdapter(mFragmentAdapter);
