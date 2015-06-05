@@ -14,6 +14,10 @@ import sc.droid.dmc.R;
 public class DeviceFragment extends Fragment {
     public DeviceFragment() {
     }
+    public static DeviceFragment newInstance(){
+        DeviceFragment f=new DeviceFragment();
+        return f;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

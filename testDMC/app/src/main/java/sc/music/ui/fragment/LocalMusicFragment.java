@@ -18,6 +18,11 @@ public class LocalMusicFragment extends Fragment implements AbsListView.OnScroll
 
     public LocalMusicFragment() {
     }
+    public static LocalMusicFragment  newInstance(){
+        LocalMusicFragment f=new LocalMusicFragment();
+        return f;
+
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

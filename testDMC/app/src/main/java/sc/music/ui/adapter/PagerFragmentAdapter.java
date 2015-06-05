@@ -6,11 +6,14 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 
+import com.xwj.toolbardemo.BaseCardFragment;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import sc.droid.dmc.R;
+import sc.music.ui.fragment.DeviceFragment;
+import sc.music.ui.fragment.LocalMusicFragment;
 
 /**
  * Created by Administrator on 2015/5/27.
@@ -29,24 +32,29 @@ public class PagerFragmentAdapter extends FragmentPagerAdapter {
         TITLES = mContext.getResources().getStringArray(R.array.pager_title);//因为定义在arrays.xml中
         this.fragmentList=fragmentList;
     }
+    public PagerFragmentAdapter(FragmentManager fm,Context mContext) {
+        super(fm);
+        this.mContext=mContext;
+        TITLES = mContext.getResources().getStringArray(R.array.pager_title);//因为定义在arrays.xml中
+    }
 
     @Override
     public Fragment getItem(int position) {
-        return fragmentList.get(position);
-//        switch(pos) {
-//
-////            case 0: return FirstFragment.newInstance("FirstFragment, Instance 1");
-////            case 1: return SecondFragment.newInstance("SecondFragment, Instance 1");
-////            case 2: return ThirdFragment.newInstance("ThirdFragment, Instance 1");
-////            case 3: return ThirdFragment.newInstance("ThirdFragment, Instance 2");
-////            case 4: return ThirdFragment.newInstance("ThirdFragment, Instance 3");
-////            default: return ThirdFragment.newInstance("ThirdFragment, Default");
-//        }
+     //   return fragmentList.get(position);
+        switch(position) {
+
+            case 0: return LocalMusicFragment.newInstance();
+            case 1: return BaseCardFragment.newInstance(1);
+            case 2: return BaseCardFragment.newInstance(2);
+            case 3: return DeviceFragment.newInstance();
+            default: return BaseCardFragment.newInstance(3);
+        }
     }
 
     @Override
     public int getCount() {
-        return fragmentList.size();
+       // return fragmentList.size();
+        return TITLES.length;
     }
 
     @Override
