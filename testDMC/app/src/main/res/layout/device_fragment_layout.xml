@@ -15,14 +15,7 @@
         android:layout_height="1dp"
         style="@style/deviceListSeparator"
         />
-    <fragment
-        android:id="@+id/cdsFragment"
-        android:name="sc.music.ui.fragment.CDSDeviceFragment"
-        android:layout_weight="1"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout="@layout/sub_device_fragment_layout"
-        />
+
     <TextView
         android:id="@+id/label_renderer"
         android:layout_width="wrap_content"
@@ -36,13 +29,6 @@
         android:layout_height="1dp"
         style="@style/deviceListSeparator"
         />
-    <fragment
-        android:id="@+id/RenderDeviceFragment"
-        android:name="sc.music.ui.fragment.RenderDeviceFragment"
-        android:layout_weight="1"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout="@layout/sub_device_fragment_layout"
-        />
+
 
 </LinearLayout>
