@@ -2,6 +2,7 @@ package sc.music.ui.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.view.InflateException;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,9 +15,20 @@ import sc.droid.dmc.R;
 public class CDSDeviceFragment extends Fragment {
     public CDSDeviceFragment() {
     }
+    private static View view=null;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.sub_device_fragment_layout,container,false);
+        if (view != null) {
+            ViewGroup parent = (ViewGroup) view.getParent();
+            if (parent != null)
+                parent.removeView(view);
+        }
+        try{
+            view=inflater.inflate(R.layout.sub_device_fragment_layout,container,false);
+        }catch(InflateException e){
+                /* parent is already there, just return view as it is */
+        }
+        return view;
     }
 }

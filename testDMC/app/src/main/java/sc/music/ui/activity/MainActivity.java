@@ -155,7 +155,7 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onPageSelected(int arg0) {
                // colorChange(arg0);
-                Toast.makeText(MainActivity.this, "页面"+arg0, Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(MainActivity.this, "页面"+arg0, Toast.LENGTH_SHORT).show();
 
             }
 

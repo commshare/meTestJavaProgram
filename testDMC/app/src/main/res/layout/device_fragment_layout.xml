@@ -37,12 +37,12 @@
         style="@style/deviceListSeparator"
         />
     <fragment
-            android:id="@+id/RenderDeviceFragment"
-            android:name="sc.music.ui.fragment.RenderDeviceFragment"
-            android:layout_weight="1"
-           android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout="@layout/sub_device_fragment_layout"
-            />
+        android:id="@+id/dmrFragment"
+        android:name="sc.music.ui.fragment.RenderDeviceFragment"
+        android:layout_weight="1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout="@layout/sub_device_fragment_layout"
+        />
 
 </LinearLayout>

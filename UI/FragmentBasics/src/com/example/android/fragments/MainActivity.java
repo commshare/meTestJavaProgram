@@ -55,6 +55,7 @@ public class MainActivity extends FragmentActivity
     public void onArticleSelected(int position) {
         // The user selected the headline of an article from the HeadlinesFragment
 
+    	//从activity的布局中获取article fragment
         // Capture the article fragment from the activity layout
         ArticleFragment articleFrag = (ArticleFragment)
                 getSupportFragmentManager().findFragmentById(R.id.article_fragment);
