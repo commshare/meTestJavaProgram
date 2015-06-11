@@ -114,14 +114,14 @@ public class MainActivity extends ActionBarActivity {
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
                 //当drawer页面打开的时候，京东的那个RunningMan动画就是在此时关闭和打开的
-                Toast.makeText(MainActivity.this, "打开", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MainActivity.this, "打开", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onDrawerClosed(View drawerView) {
                 super.onDrawerClosed(drawerView);
                 //当drawer页面关闭的时候
-                Toast.makeText(MainActivity.this, "关闭", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(MainActivity.this, "关闭", Toast.LENGTH_SHORT).show();
             }
 
         };
@@ -260,6 +260,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
 
+    //可选菜单
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
@@ -296,6 +297,8 @@ public class MainActivity extends ActionBarActivity {
         switch (item.getItemId()) {
             case R.id.action_settings:
                 Toast.makeText(MainActivity.this, "action_settings", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this, SettingsActivity.class).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP));
+
                 break;
             case R.id.action_share:
                 Toast.makeText(MainActivity.this, "action_share", Toast.LENGTH_SHORT).show();

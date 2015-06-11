@@ -2,5 +2,8 @@
 <resources>
     <color name="background_tab_pressed">#6633B5E5</color>
     <color name="material_pink_A200">#FD87A9</color>
-
+    <!--the following there copyied from https://github.com/Alluretears/ToolBarDemo -->
+    <color name="colorPrimary">#4CAF50</color>
+    <color name="colorPrimaryDark">#1B5E20</color>
+    <color name="colorAccent">#FF9800</color>
 </resources>

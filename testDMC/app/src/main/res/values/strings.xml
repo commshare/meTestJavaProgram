@@ -6,6 +6,10 @@
 
     <string name="drawer_open">抽屉打开</string>
     <string name="drawer_close">抽屉关闭</string>
-
+    <string name="men_share">分享到</string>
+    <string name="menu_refresh">刷新设备</string>
+    <string name="menu_quit">退出应用</string>
+    <string name="menu_setting">设置</string>
+    <string name="SettingsActivity_titile">设置</string>
 
 </resources>

@@ -5,4 +5,7 @@
     <dimen name="bladeview_fontsize">12sp</dimen>
     <dimen name="bladeview_popup_fontsize">20sp</dimen>
     <dimen name="bladeview_popup_height">80dp</dimen>
+    <!-- Per the design guidelines, navigation drawers should be between 240dp and 320dp:
+     https://developer.android.com/design/patterns/navigation-drawer.html -->
+    <dimen name="navigation_drawer_width">240dp</dimen>
 </resources>

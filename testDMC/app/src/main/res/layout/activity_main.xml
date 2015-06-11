@@ -43,19 +43,12 @@
 
         <!-- 侧滑菜单内容 -->
 
-        <LinearLayout
-            android:id="@+id/drawer_view"
-            android:layout_width="match_parent"
+        <fragment android:id="@+id/navigation_drawer"
+            android:layout_width="@dimen/navigation_drawer_width"
             android:layout_height="match_parent"
             android:layout_gravity="start"
-            android:background="@color/material_pink_A200"
-            android:orientation="vertical"
-            android:padding="8dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-        </LinearLayout>
+            android:name="sc.music.ui.fragment.DrawerFragment"
+            tools:layout="@layout/navigation_drawer_fragment"/>
     </android.support.v4.widget.DrawerLayout>
 
 </LinearLayout>
