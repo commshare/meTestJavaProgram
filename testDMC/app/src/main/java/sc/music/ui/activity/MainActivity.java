@@ -15,6 +15,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.graphics.Palette;
 import android.support.v7.widget.ShareActionProvider;
 import android.support.v7.widget.Toolbar;
@@ -40,8 +41,10 @@ import java.util.List;
 
 
 import sc.music.ui.adapter.PagerFragmentAdapter;
-
-public class MainActivity extends ActionBarActivity {
+/*
+* http://www.codeproject.com/Articles/996561/Create-and-Publish-Your-First-Android-App-Part
+* */
+public class MainActivity extends /*ActionBarActivity废弃*/AppCompatActivity {
     private DrawerLayout mDrawerLayout;//抽屉
     private ActionBarDrawerToggle mDrawerToggle; //触发抽屉
     private ShareActionProvider mShareActionProvider; //共享action
@@ -102,6 +105,7 @@ public class MainActivity extends ActionBarActivity {
 //            }
 //        });
         //       mToolbar.setOnCreateContextMenuListener(this);
+        //会有空指针异常么？
         getSupportActionBar().setHomeButtonEnabled(true);  // 设置返回键可用
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         /* findView */
