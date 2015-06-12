@@ -7,5 +7,9 @@
     <dimen name="bladeview_popup_height">80dp</dimen>
     <!-- Per the design guidelines, navigation drawers should be between 240dp and 320dp:
      https://developer.android.com/design/patterns/navigation-drawer.html -->
-    <dimen name="navigation_drawer_width">240dp</dimen>
+    <dimen name="navigation_drawer_width">200dp</dimen>
+
+    <!--refer to https://github.com/Alluretears/ToolBarDemo -->
+    <dimen name="tab_height">48dp</dimen>
+    <dimen name="tool_bar_elevation">4dp</dimen>
 </resources>

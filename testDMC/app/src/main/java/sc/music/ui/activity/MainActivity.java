@@ -17,6 +17,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.graphics.Palette;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.ShareActionProvider;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -31,6 +32,7 @@ import android.widget.Toast;
 import com.xwj.toolbardemo.BaseCardFragment;
 
 import sc.droid.dmc.R;
+import sc.music.ui.Models.DrawerItem;
 import sc.music.ui.fragment.DeviceFragment;
 import sc.music.ui.fragment.LocalMusicFragment;
 import sc.music.ui.widget.PagerSlidingTabStrip;
@@ -41,6 +43,8 @@ import java.util.List;
 
 
 import sc.music.ui.adapter.PagerFragmentAdapter;
+import sc.music.util.Tools;
+
 /*
 * http://www.codeproject.com/Articles/996561/Create-and-Publish-Your-First-Android-App-Part
 * */
@@ -55,8 +59,18 @@ public class MainActivity extends /*ActionBarActivity废弃*/AppCompatActivity {
     //直接分配一次内存，是不是重复了啊
     private List<Fragment> mFragmentList ;
     private PagerFragmentAdapter mFragmentAdapter;
+    //////////////////////////////////////////////////
 
+    public String HEADER_NAME ="test"; //“Your Name”; (that shows your name in the navigation header)
+    public String HEADER_EMAIL ="test";// “Your Email”;
+    public int HEADER_IMAGE = 1;// (we will change this later to point to a resource file)
+    private RecyclerView mRecyclerView;
+    private RecyclerView.LayoutManager mLayoutManager;
+    private DrawerLayout Drawer;
+  //  private ActionBarDrawerToggle mDrawerToggle;
+    private List<DrawerItem> dataList;
 
+    //////////////////////////////////////////////////
     Context mContext;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,9 +93,14 @@ public class MainActivity extends /*ActionBarActivity废弃*/AppCompatActivity {
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         // toolbar.setLogo(R.drawable.ic_launcher);
         // 标题的文字需在setSupportActionBar之前，不然会无效
-        mToolbar.setTitle("测试DMC");
+        mToolbar.setTitle(R.string.MainActivity_title);
         // toolbar.setSubtitle("副标题");
         setSupportActionBar(mToolbar);
+       // mToolbar.setNavigationIcon(R.drawable.ic_action_menu);
+
+        //这个可以显示系统状态栏啊
+        //Tools.setStatusBar(this, R.color.colorPrimary);
+
         /* 这些通过ActionBar来设置也是一样的，注意要在setSupportActionBar(toolbar);之后，不然就报错了 */
         // getSupportActionBar().setTitle("标题");
         // getSupportActionBar().setSubtitle("副标题");
@@ -301,6 +320,7 @@ public class MainActivity extends /*ActionBarActivity废弃*/AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.action_settings:
                 Toast.makeText(MainActivity.this, "action_settings", Toast.LENGTH_SHORT).show();
+               //弹出一个设置Activity
                 startActivity(new Intent(this, SettingsActivity.class).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP));
 
                 break;

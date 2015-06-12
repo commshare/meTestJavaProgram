@@ -5,7 +5,7 @@
         <!-- Customize your theme here. -->
 
         <!-- toolbar（actionbar）颜色 -->
-        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimary">@color/accent</item>
         <item name="android:windowActionBar">false</item>
         <!-- 状态栏颜色 -->
         <item name="colorPrimaryDark">#3A5FCD</item>

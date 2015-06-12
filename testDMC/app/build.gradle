@@ -51,4 +51,12 @@ dependencies {
     //Android
     compile 'com.android.support:support-v4:21.0.+'
     compile 'com.android.support:support-v13:21.0.0'
+
+    //refer to https://github.com/Alluretears/ToolBarDemo
+    compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'
+    compile 'it.neokree:MaterialTabs:0.11'
+
+    //http://www.codeproject.com/Articles/996561/Create-and-Publish-Your-First-Android-App-Part
+    compile 'com.android.support:recyclerview-v7:22.1.1'
+   // compile 'de.hbdodenhof:circleimageview:1.3.0'
 }
