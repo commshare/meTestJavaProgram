@@ -35,6 +35,8 @@ import sc.droid.dmc.R;
 import sc.music.ui.Models.DrawerItem;
 import sc.music.ui.fragment.DeviceFragment;
 import sc.music.ui.fragment.LocalMusicFragment;
+import sc.music.ui.fragment.NavigationDrawerCallbacks;
+import sc.music.ui.fragment.NavigationDrawerFragment;
 import sc.music.ui.widget.PagerSlidingTabStrip;
 
 import java.lang.reflect.Field;
@@ -48,7 +50,7 @@ import sc.music.util.Tools;
 /*
 * http://www.codeproject.com/Articles/996561/Create-and-Publish-Your-First-Android-App-Part
 * */
-public class MainActivity extends /*ActionBarActivity废弃*/AppCompatActivity {
+public class MainActivity extends /*ActionBarActivity废弃*/AppCompatActivity  implements NavigationDrawerCallbacks {
     private DrawerLayout mDrawerLayout;//抽屉
     private ActionBarDrawerToggle mDrawerToggle; //触发抽屉
     private ShareActionProvider mShareActionProvider; //共享action
@@ -67,8 +69,13 @@ public class MainActivity extends /*ActionBarActivity废弃*/AppCompatActivity {
     private RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
     private DrawerLayout Drawer;
+
+    /**
+     * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
+     */
+    private NavigationDrawerFragment mNavigationDrawerFragment;
   //  private ActionBarDrawerToggle mDrawerToggle;
-    private List<DrawerItem> dataList;
+ //   private List<DrawerItem> dataList;
 
     //////////////////////////////////////////////////
     Context mContext;
@@ -127,30 +134,36 @@ public class MainActivity extends /*ActionBarActivity废弃*/AppCompatActivity {
         //会有空指针异常么？
         getSupportActionBar().setHomeButtonEnabled(true);  // 设置返回键可用
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        /* findView */
+        /* findView *///抽屉总布局
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer);
-        //系统的抽屉类啊
-        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar, R.string.drawer_open,
-                R.string.drawer_close) {
-            //抽屉打开的时候，执行这个
-            @Override
-            public void onDrawerOpened(View drawerView) {
-                super.onDrawerOpened(drawerView);
-                //当drawer页面打开的时候，京东的那个RunningMan动画就是在此时关闭和打开的
-                //Toast.makeText(MainActivity.this, "打开", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onDrawerClosed(View drawerView) {
-                super.onDrawerClosed(drawerView);
-                //当drawer页面关闭的时候
-               // Toast.makeText(MainActivity.this, "关闭", Toast.LENGTH_SHORT).show();
-            }
-
-        };
-        mDrawerToggle.syncState();
-        //监听抽屉？
-        mDrawerLayout.setDrawerListener(mDrawerToggle);
+        //左边那个抽屉的fragment的布局fragment_drawer
+        //refer to http://stackoverflow.com/questions/25321222/v4-getfragmentmanager-with-activity-incompatible-types
+        mNavigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
+        //drawer是抽屉DrawerLayout总布局
+        //把mDrawerToggle弄到mNavigationDrawerFragment里头去了
+        mNavigationDrawerFragment.setup(R.id.navigation_drawer, (DrawerLayout) findViewById(R.id.drawer), mToolbar);
+//        //系统的抽屉类啊
+//        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar, R.string.drawer_open,
+//                R.string.drawer_close) {
+//            //抽屉打开的时候，执行这个
+//            @Override
+//            public void onDrawerOpened(View drawerView) {
+//                super.onDrawerOpened(drawerView);
+//                //当drawer页面打开的时候，京东的那个RunningMan动画就是在此时关闭和打开的
+//                //Toast.makeText(MainActivity.this, "打开", Toast.LENGTH_SHORT).show();
+//            }
+//
+//            @Override
+//            public void onDrawerClosed(View drawerView) {
+//                super.onDrawerClosed(drawerView);
+//                //当drawer页面关闭的时候
+//               // Toast.makeText(MainActivity.this, "关闭", Toast.LENGTH_SHORT).show();
+//            }
+//
+//        };
+//        mDrawerToggle.syncState();
+//        //监听抽屉？
+//        mDrawerLayout.setDrawerListener(mDrawerToggle);
 
         mPagerSlidingTabStrip = (PagerSlidingTabStrip) findViewById(R.id.tabs);
         //就是ui上的一个pager组件
@@ -350,6 +363,11 @@ public class MainActivity extends /*ActionBarActivity废弃*/AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void onNavigationDrawerItemSelected(int position) {
+        Toast.makeText(this, "Menu item selected -> " + position, Toast.LENGTH_SHORT).show();
     }
 
     //这个是给viewpager用的
