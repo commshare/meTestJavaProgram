@@ -5,7 +5,7 @@
     <include
       layout="@layout/preference_activity_toolbar_layout"
       android:id="@+id/preference_activity_toolbar"/>
-
+    <!--这个FragmentLayout用来加载header的-->
     <FrameLayout
         android:id="@+id/content_wrapper"
         android:layout_width="match_parent"
@@ -13,8 +13,13 @@
          >
 
         </FrameLayout>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        style="@style/deviceListSeparator"
+        />
     <fragment
-        android:id="@+id/content_fragment"
+        android:id="@+id/local_cds_settings_fragment"
         android:name="sc.music.ui.fragment.ContentDirectorySettingsFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
