@@ -188,6 +188,9 @@ public class NavigationDrawerFragment extends Fragment implements NavigationDraw
         items.add(new NavigationItem("item 1", getResources().getDrawable(R.drawable.ic_action_headphones)));
         items.add(new NavigationItem("item 2", getResources().getDrawable(R.drawable.ic_action_collection)));
         items.add(new NavigationItem("item 3", getResources().getDrawable(R.drawable.ic_action_volume_muted)));
+        String stream=getResources().getString(R.string.nvg_item_stream);
+        items.add(new NavigationItem(stream, getResources().getDrawable(R.drawable.ic_stream_to_dlna_airplay)));
+
         return items;
     }
     @Override
