@@ -2,6 +2,7 @@ package sc.music.ui.fragment;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -22,6 +23,7 @@ import java.util.List;
 
 import sc.droid.dmc.R;
 import sc.music.ui.Models.NavigationItem;
+import sc.music.ui.activity.SettingsActivity;
 import sc.music.ui.adapter.NavigationDrawerAdapter;
 import sc.music.ui.layout.ScrimInsetsFrameLayout;
 
@@ -175,8 +177,12 @@ public class NavigationDrawerFragment extends Fragment implements NavigationDraw
         if (mCallbacks != null) {
             mCallbacks.onNavigationDrawerItemSelected(position);
         }
-        //这个时候，也要在UI上显示？
+        //这是让adapter表现出某项被选中的UI现象
         ((NavigationDrawerAdapter) mDrawerList.getAdapter()).selectPosition(position);
+        if(position==3){
+            startActivity(new Intent(getActivity(), SettingsActivity.class).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP));
+
+        }
     }
 
     public boolean isDrawerOpen() {

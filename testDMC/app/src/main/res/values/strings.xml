@@ -12,7 +12,7 @@
     <string name="menu_setting">设置</string>
     <string name="SettingsActivity_title">设置</string>
     <string name="MainActivity_title">测试DMC</string>
-    <string name="nvg_item_stream">串流</string>
+    <string name="nvg_item_stream">影音串流</string>
 
 
 </resources>
