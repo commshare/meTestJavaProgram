@@ -25,10 +25,6 @@
 		android:title="@string/pref_contentdirectory_title"
 		android:summary="@string/pref_contentdirectory_desc" />
 
-	<header
-		android:id="@+id/about_settings"
-		android:fragment="sc.music.ui.fragment.AboutSettingsFragment"
-		android:title="@string/pref_about_title"
-		android:summary="@string/pref_about_desc" />
+
 
 </preference-headers>
