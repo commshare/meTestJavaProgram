@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">SC_DMC</string>
+    <string name="version">Version</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -14,5 +15,29 @@
     <string name="MainActivity_title">测试DMC</string>
     <string name="nvg_item_stream">影音串流</string>
 
-
+    <!-- Option -->
+    <string name="pref_contentdirectory_title">Content Directory</string>
+    <string name="pref_contentdirectory_desc">Activate a local Content Directory server</string>
+    <string name="pref_contentDirectory_display_name">Display Name</string>
+    <string name="pref_contentDirectory_share_contentdirectory">Share media</string>
+    <string name="pref_contentDirectory_share_contentdirectory_desc">Share media with other device on network</string>
+    <string name="pref_share_media_title">Type of media to share</string>
+    <string name="pref_contentDirectory_audio_title">Audio</string>
+    <string name="pref_contentDirectory_audio_desc">Share audio</string>
+    <string name="pref_contentDirectory_image_title">Image</string>
+    <string name="pref_contentDirectory_image_desc">Share image</string>
+    <string name="pref_contentDirectory_video_title">Video</string>
+    <string name="pref_contentDirectory_video_desc">Share video</string>
+    <string name="pref_about_title">About</string>
+    <string name="pref_about_desc"></string>
+    <!-- About -->
+    <string name="copyright">Copyright</string>
+    <string name="about_copyright">Copyright © 2014 Aurélien Chabot</string>
+    <string name="license">License</string>
+    <string name="about_license" translatable="false">GPLv3</string>
+    <string name="link_license" translatable="false">http://www.gnu.org/licenses/gpl-3.0.html</string>
+    <string name="licenses_other">Library licenses</string>
+    <string name="about_licenses_other"></string>
+    <string name="source">Source Code</string>
+    <string name="source_url" translatable="false">http://github.com/trishika/droidupnp</string>
 </resources>
