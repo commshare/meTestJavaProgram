@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="J:\media\nufront\hms\NuMusic2\MyMusic\libs\android-support-v4.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="48c94ae70fa65718b382098237806a5909bb096e">
+        <dex dex="J:\media\nufront\hms\NuMusic2\MyMusic\build\intermediates\pre-dexed\debug\android-support-v4-c97dbbddb269b226f13081dd30f2d9933ea4499a.jar" />
+    </item>
+    <item
+        jar="J:\media\nufront\hms\NuMusic2\MyMusic\libs\pinyin4j-2.5.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="ae353005f973da1cd8545b54354504c2503f6865">
+        <dex dex="J:\media\nufront\hms\NuMusic2\MyMusic\build\intermediates\pre-dexed\debug\pinyin4j-2.5.0-16869df3cbd25393efcef623d1f5700b8849e7da.jar" />
+    </item>
+
+</items>
