@@ -80,6 +80,11 @@ public class ContentDirectoryFragment extends ListFragment implements Observer
 	static final String STATE_TREE = "tree";
 	static final String STATE_CURRENT = "current";
 
+	public static ContentDirectoryFragment newInstance(){
+		ContentDirectoryFragment f=new ContentDirectoryFragment();
+		return f;
+	}
+
 	@Override
 	public void onCreate(Bundle savedInstanceState)
 	{

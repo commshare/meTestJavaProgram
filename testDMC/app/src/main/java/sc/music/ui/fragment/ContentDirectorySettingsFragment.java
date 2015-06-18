@@ -19,6 +19,9 @@ import sc.music.ui.view.ContentDirectoryEnabler;
 public class ContentDirectorySettingsFragment  extends PreferenceFragment
         implements SharedPreferences.OnSharedPreferenceChangeListener{
     private ContentDirectoryEnabler enabler;
+
+
+
     @Override
     public void onActivityCreated(Bundle savedInstanceState)
     {

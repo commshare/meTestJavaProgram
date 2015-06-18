@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import sc.droid.dmc.R;
+import sc.music.ui.fragment.ContentDirectoryFragment;
 import sc.music.ui.fragment.DeviceFragment;
 import sc.music.ui.fragment.LocalMusicFragment;
 

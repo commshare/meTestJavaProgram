@@ -36,6 +36,10 @@
 
 
             </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
             <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
@@ -76,6 +80,7 @@
                     android:layout_gravity="bottom" />
 
             </FrameLayout>
+            </LinearLayout>>
         </LinearLayout>
 
         <!-- 侧滑菜单内容 -->
@@ -86,6 +91,7 @@
             android:layout_gravity="start"
             android:name="sc.music.ui.fragment.NavigationDrawerFragment"
             tools:layout="@layout/fragment_navigation_drawer"/>
+
     </android.support.v4.widget.DrawerLayout>
 
 </LinearLayout>
