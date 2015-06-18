@@ -3,4 +3,4 @@
   xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_checked="true" android:drawable="@drawable/toggle_button_on" />
     <item android:drawable="@drawable/toggle_button_off" />
-</selector><!-- From: file:/J:/media/nufront/hms/NuMusic2/MyMusic/res/drawable/toggle_button_selector.xml -->
+</selector><!-- From: file:/J:/media/nufront/ME/meTestJavaProgram/UI/MyMusic/res/drawable/toggle_button_selector.xml -->

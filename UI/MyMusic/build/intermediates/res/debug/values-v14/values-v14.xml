@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/J:/media/nufront/hms/NuMusic2/MyMusic/res/values-v14/styles.xml -->
+    <!-- From: file:/J:/media/nufront/ME/meTestJavaProgram/UI/MyMusic/res/values-v14/styles.xml -->
     <eat-comment/>
     <style name="AppBaseTheme" parent="android:Theme.Holo.Light.DarkActionBar">
         <!-- API 14 theme customizations can go here. -->

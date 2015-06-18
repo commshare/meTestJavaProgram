@@ -1,4 +1,4 @@
-package sc.music.ui.activity;
+package sc.music;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -13,7 +13,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.graphics.Palette;
@@ -24,7 +24,6 @@ import android.util.Log;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.Window;
 import android.widget.Toast;
@@ -32,25 +31,29 @@ import android.widget.Toast;
 import com.xwj.toolbardemo.BaseCardFragment;
 
 import sc.droid.dmc.R;
-import sc.music.ui.Models.DrawerItem;
-import sc.music.ui.fragment.DeviceFragment;
-import sc.music.ui.fragment.LocalMusicFragment;
+import sc.music.ui.activity.SettingsActivity;
+import sc.music.ui.fragment.ContentDirectoryFragment;
 import sc.music.ui.fragment.NavigationDrawerCallbacks;
 import sc.music.ui.fragment.NavigationDrawerFragment;
 import sc.music.ui.widget.PagerSlidingTabStrip;
 
 import java.lang.reflect.Field;
-import java.util.ArrayList;
 import java.util.List;
 
 
 import sc.music.ui.adapter.PagerFragmentAdapter;
-import sc.music.util.Tools;
+import sc.music.upnp.controler.IUpnpServiceController;
+import sc.music.upnp.model.IFactory;
 
 /*
 * http://www.codeproject.com/Articles/996561/Create-and-Publish-Your-First-Android-App-Part
 * */
-public class MainActivity extends /*ActionBarActivity废弃*/AppCompatActivity  implements NavigationDrawerCallbacks {
+public class Main extends /*ActionBarActivity废弃*/AppCompatActivity  implements NavigationDrawerCallbacks {
+    private String TAG="scdmc.Main";
+    // Controller
+    public static IUpnpServiceController/*这是一个接口*/ upnpServiceController = null;
+    public static IFactory factory = null;
+    private CharSequence mTitle;
     private DrawerLayout mDrawerLayout;//抽屉
     private ActionBarDrawerToggle mDrawerToggle; //触发抽屉
     private ShareActionProvider mShareActionProvider; //共享action
@@ -62,6 +65,7 @@ public class MainActivity extends /*ActionBarActivity废弃*/AppCompatActivity  
     private List<Fragment> mFragmentList ;
     private PagerFragmentAdapter mFragmentAdapter;
     //////////////////////////////////////////////////
+    private static ContentDirectoryFragment mContentDirectoryFragment;
 
     public String HEADER_NAME ="test"; //“Your Name”; (that shows your name in the navigation header)
     public String HEADER_EMAIL ="test";// “Your Email”;
@@ -83,7 +87,15 @@ public class MainActivity extends /*ActionBarActivity废弃*/AppCompatActivity  
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mContext = this;    // since Activity extends Context
+        Log.d(TAG, "onCreated : " + savedInstanceState + factory + upnpServiceController);
 
+        // Use cling factory
+        if (factory == null)
+            factory = new sc.music.upnp.controler.Factory();
+
+        // Upnp service
+        if (upnpServiceController == null)
+            upnpServiceController = factory.createUpnpServiceController(this);
         /**
          * DrawerLayout不覆盖Toolbar
          */
@@ -119,10 +131,10 @@ public class MainActivity extends /*ActionBarActivity废弃*/AppCompatActivity  
 //            public boolean onMenuItemClick(MenuItem item) {
 //                switch (item.getItemId()) {
 //                    case R.id.action_settings:
-//                        Toast.makeText(MainActivity.this, "action_settings", Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(Main.this, "action_settings", Toast.LENGTH_SHORT).show();
 //                        break;
 //                    case R.id.action_share:
-//                        Toast.makeText(MainActivity.this, "action_share", Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(Main.this, "action_share", Toast.LENGTH_SHORT).show();
 //                        break;
 //                    default:
 //                        break;
@@ -139,6 +151,8 @@ public class MainActivity extends /*ActionBarActivity废弃*/AppCompatActivity  
         //左边那个抽屉的fragment的布局fragment_drawer
         //refer to http://stackoverflow.com/questions/25321222/v4-getfragmentmanager-with-activity-incompatible-types
         mNavigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
+        mTitle = getTitle();
+
         //drawer是抽屉DrawerLayout总布局
         //把mDrawerToggle弄到mNavigationDrawerFragment里头去了
         mNavigationDrawerFragment.setup(R.id.navigation_drawer, (DrawerLayout) findViewById(R.id.drawer), mToolbar);
@@ -150,14 +164,14 @@ public class MainActivity extends /*ActionBarActivity废弃*/AppCompatActivity  
 //            public void onDrawerOpened(View drawerView) {
 //                super.onDrawerOpened(drawerView);
 //                //当drawer页面打开的时候，京东的那个RunningMan动画就是在此时关闭和打开的
-//                //Toast.makeText(MainActivity.this, "打开", Toast.LENGTH_SHORT).show();
+//                //Toast.makeText(Main.this, "打开", Toast.LENGTH_SHORT).show();
 //            }
 //
 //            @Override
 //            public void onDrawerClosed(View drawerView) {
 //                super.onDrawerClosed(drawerView);
 //                //当drawer页面关闭的时候
-//               // Toast.makeText(MainActivity.this, "关闭", Toast.LENGTH_SHORT).show();
+//               // Toast.makeText(Main.this, "关闭", Toast.LENGTH_SHORT).show();
 //            }
 //
 //        };
@@ -191,7 +205,7 @@ public class MainActivity extends /*ActionBarActivity废弃*/AppCompatActivity  
             @Override
             public void onPageSelected(int arg0) {
                // colorChange(arg0);
-              //  Toast.makeText(MainActivity.this, "页面"+arg0, Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(Main.this, "页面"+arg0, Toast.LENGTH_SHORT).show();
 
             }
 
@@ -226,6 +240,24 @@ public class MainActivity extends /*ActionBarActivity废弃*/AppCompatActivity  
         mPagerSlidingTabStrip.setSelectedTextColor(Color.WHITE);
         // 正常文字颜色
         mPagerSlidingTabStrip.setTextColor(Color.BLACK);
+    }
+
+    public static void setContentDirectoryFragment(ContentDirectoryFragment f) {
+        mContentDirectoryFragment = f;
+    }
+    //是搜索啊
+    private static Menu actionBarMenu = null;
+    //actionbar的搜索是否可见
+    public static void setSearchVisibility(boolean visibility)
+    {
+        if(actionBarMenu == null)
+            return;
+
+        //是搜索啊
+        MenuItem item = actionBarMenu.findItem(R.id.action_search);
+
+        if(item != null)
+            item.setVisible(visibility);
     }
 
     /**
@@ -306,12 +338,12 @@ public class MainActivity extends /*ActionBarActivity废弃*/AppCompatActivity  
         intent.setType("text/*");
         mShareActionProvider.setShareIntent(intent);
 
-        MenuItem searchItem = menu.findItem(R.id.ab_search);
+        MenuItem searchItem = menu.findItem(R.id.action_search);
 
         MenuItemCompat.setOnActionExpandListener(searchItem, new MenuItemCompat.OnActionExpandListener() {
             @Override
             public boolean onMenuItemActionExpand(MenuItem item) {
-                Toast.makeText(MainActivity.this, "打开", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Main.this, "打开", Toast.LENGTH_SHORT).show();
                 return true;
             }
 
@@ -332,16 +364,16 @@ public class MainActivity extends /*ActionBarActivity废弃*/AppCompatActivity  
         // as you specify a parent activity in AndroidManifest.xml.
         switch (item.getItemId()) {
             case R.id.action_settings:
-                Toast.makeText(MainActivity.this, "action_settings", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Main.this, "action_settings", Toast.LENGTH_SHORT).show();
                //弹出一个设置Activity
                 startActivity(new Intent(this, SettingsActivity.class).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP));
 
                 break;
             case R.id.action_share:
-                Toast.makeText(MainActivity.this, "action_share", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Main.this, "action_share", Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.ab_search:
-                Toast.makeText(MainActivity.this, "ab_search", Toast.LENGTH_SHORT).show();
+            case R.id.action_search:
+                Toast.makeText(Main.this, "ab_search", Toast.LENGTH_SHORT).show();
                 break;
             default:
                 break;
@@ -401,6 +433,39 @@ public class MainActivity extends /*ActionBarActivity废弃*/AppCompatActivity  
         @Override
         public int getCount() {
             return title_length;  // TITLES.length;
+        }
+    }
+    @Override
+    public void onResume()
+    {
+        Log.v(TAG, "Resume activity");
+        upnpServiceController.resume(this);
+        super.onResume();
+    }
+
+    @Override
+    public void onPause()
+    {
+        Log.v(TAG, "Pause activity");
+        upnpServiceController.pause();
+        upnpServiceController.getServiceListener().getServiceConnexion().onServiceDisconnected(null);
+        super.onPause();
+    }
+    public static ContentDirectoryFragment getContentDirectoryFragment() {
+        return mContentDirectoryFragment;
+    }
+    public void refresh()
+    {
+        upnpServiceController.getServiceListener().refresh();
+        ContentDirectoryFragment cd = getContentDirectoryFragment();
+        if(cd!=null)
+            cd.refresh();
+    }
+    public void restoreActionBar() {
+        ActionBar actionBar = getSupportActionBar();
+        if(actionBar!=null) {
+            actionBar.setDisplayShowTitleEnabled(true);
+            actionBar.setTitle(mTitle);
         }
     }
 }

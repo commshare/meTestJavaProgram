@@ -2,4 +2,4 @@
 <shape android:shape="rectangle"
   xmlns:android="http://schemas.android.com/apk/res/android">
     <gradient android:startColor="#33000000" android:endColor="@color/transparent" android:angle="270.0" />
-</shape><!-- From: file:/J:/media/nufront/hms/NuMusic2/MyMusic/res/drawable-nodpi/top_shadow.xml -->
+</shape><!-- From: file:/J:/media/nufront/ME/meTestJavaProgram/UI/MyMusic/res/drawable-nodpi/top_shadow.xml -->

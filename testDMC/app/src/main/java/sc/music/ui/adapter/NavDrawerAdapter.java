@@ -22,10 +22,10 @@ public class NavDrawerAdapter  extends RecyclerView.Adapter<NavDrawerAdapter.Vie
     private static final int TYPE_HEADER = 0;
     private static final int TYPE_ITEM = 1;
 
-    // String Array to store the passed titles Value from MainActivity.java
+    // String Array to store the passed titles Value from Main.java
     private String mNavTitles[];
 
-    // Int Array to store the passed icons resource value from MainActivity.java
+    // Int Array to store the passed icons resource value from Main.java
     private int mIcons[];
 
     //String Resource for header View Name

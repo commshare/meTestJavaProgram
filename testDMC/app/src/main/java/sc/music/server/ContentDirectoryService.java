@@ -19,7 +19,14 @@ import org.fourthline.cling.support.model.item.Item;
 
 import java.util.ArrayList;
 
+import sc.droid.dmc.R;
+import sc.music.common.Settings;
+import sc.music.upnp.localcontent.AlbumContainer;
+import sc.music.upnp.localcontent.ArtistContainer;
+import sc.music.upnp.localcontent.AudioContainer;
 import sc.music.upnp.localcontent.CustomContainer;
+import sc.music.upnp.localcontent.ImageContainer;
+import sc.music.upnp.localcontent.VideoContainer;
 
 /**
  * Created by Administrator on 2015/6/10.
@@ -56,11 +63,11 @@ public class ContentDirectoryService extends AbstractContentDirectoryService/*cl
     private static Context ctx;
     private static String baseURL;
 
-
     public ContentDirectoryService()
     {
         Log.v(TAG, "Call default constructor...");
     }
+
     public ContentDirectoryService(Context ctx, String baseURL)
     {
         this.ctx = ctx;
@@ -76,16 +83,12 @@ public class ContentDirectoryService extends AbstractContentDirectoryService/*cl
         this.baseURL = baseURL;
     }
 
-    //这是必须实现的抽象类的抽象方法
+    //根据id来浏览
     @Override
     public BrowseResult browse(String objectID, BrowseFlag browseFlag,
                                String filter, long firstResult, long maxResults,
                                SortCriterion[] orderby) throws ContentDirectoryException
     {
-        Log.e(TAG, "No container for this ID !!!");
-        throw new ContentDirectoryException(ContentDirectoryErrorCode.NO_SUCH_OBJECT);
-    }
-   /* {
         Log.d(TAG, "Will browse " + objectID);
 
         try
@@ -116,14 +119,15 @@ public class ContentDirectoryService extends AbstractContentDirectoryService/*cl
 
             Log.d(TAG, "Browsing type " + type);
             SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(ctx);
-            //创建一个根容器
+            //cling库的
             Container rootContainer = new CustomContainer( "" + ROOT_ID, "" + ROOT_ID,
                     ctx.getString(R.string.app_name), ctx.getString(R.string.app_name), baseURL);
 
 
             // Video
             Container videoContainer = null, allVideoContainer = null;
-            if(sharedPref.getBoolean(SettingsActivity.CONTENTDIRECTORY_VIDEO, true))
+            //读取配置
+            if(sharedPref.getBoolean(Settings.CONTENTDIRECTORY_VIDEO, true))
             {
                 videoContainer = new CustomContainer( "" + VIDEO_ID, "" + ROOT_ID,
                         VIDEO_TXT, ctx.getString(R.string.app_name), baseURL);
@@ -139,7 +143,7 @@ public class ContentDirectoryService extends AbstractContentDirectoryService/*cl
             // Audio 构造audioContainer
             Container audioContainer = null, artistAudioContainer = null, albumAudioContainer = null,
                     allAudioContainer = null;
-            if(sharedPref.getBoolean(SettingsActivity.CONTENTDIRECTORY_AUDIO, true))
+            if(sharedPref.getBoolean(Settings.CONTENTDIRECTORY_AUDIO, true))
             {
                 audioContainer = new CustomContainer( "" + AUDIO_ID, "" + ROOT_ID,
                         AUDIO_TXT, ctx.getString(R.string.app_name), baseURL);
@@ -164,7 +168,7 @@ public class ContentDirectoryService extends AbstractContentDirectoryService/*cl
 
             // Image
             Container imageContainer = null, allImageContainer = null;
-            if(sharedPref.getBoolean(SettingsActivity.CONTENTDIRECTORY_IMAGE, true))
+            if(sharedPref.getBoolean(Settings.CONTENTDIRECTORY_IMAGE, true))
             {
                 imageContainer = new CustomContainer( "" + IMAGE_ID, "" + ROOT_ID, IMAGE_TXT,
                         ctx.getString(R.string.app_name), baseURL);
@@ -294,5 +298,5 @@ public class ContentDirectoryService extends AbstractContentDirectoryService/*cl
 
         Log.e(TAG, "No container for this ID !!!");
         throw new ContentDirectoryException(ContentDirectoryErrorCode.NO_SUCH_OBJECT);
-    }*/
+    }
 }

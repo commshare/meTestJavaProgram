@@ -4,4 +4,4 @@
     <item android:drawable="@color/holo_blue_light" android:state_pressed="false"></item>
     <item android:drawable="@color/holo_blue_light2" android:state_pressed="true"></item>
 
-</selector><!-- From: file:/J:/media/nufront/hms/NuMusic2/MyMusic/res/drawable/button_pressed_blue_backround.xml -->
+</selector><!-- From: file:/J:/media/nufront/ME/meTestJavaProgram/UI/MyMusic/res/drawable/button_pressed_blue_backround.xml -->

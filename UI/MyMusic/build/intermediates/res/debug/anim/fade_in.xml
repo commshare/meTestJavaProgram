@@ -4,4 +4,4 @@
     android:fromAlpha="0.1"
     android:interpolator="@android:anim/accelerate_decelerate_interpolator"
     android:toAlpha="1.0" />
-<!-- From: file:/J:/media/nufront/hms/NuMusic2/MyMusic/res/anim/fade_in.xml -->
+<!-- From: file:/J:/media/nufront/ME/meTestJavaProgram/UI/MyMusic/res/anim/fade_in.xml -->

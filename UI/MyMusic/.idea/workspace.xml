@@ -1,194 +1,194 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e622b239-701f-4ec0-8e2e-47628942ba16" name="Default" comment="">
+    <list default="true" id="3b372166-5597-4c0b-80fc-154761ae2c4d" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MyMusic.iml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/android_support_v4.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/pinyin4j_2_5_0.xml" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\example\mymusic\BuildConfig.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\example\mymusic\R$attr.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\example\mymusic\R$dimen.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\example\mymusic\R$drawable.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\example\mymusic\R$id.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\example\mymusic\R$layout.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\example\mymusic\R$menu.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\example\mymusic\R$string.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\example\mymusic\R$style.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\example\mymusic\R.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\BuildConfig.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\MusicApp.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\R$anim.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\R$attr.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\R$color.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\R$dimen.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\R$drawable.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\R$id.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\R$layout.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\R$menu.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\R$string.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\R$style.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\R$styleable.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\R.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\activity\IConstants.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\activity\MainContentActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\activity\MainContentActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\activity\MainContentActivity$3.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\activity\MainContentActivity$4.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\activity\MainContentActivity$5.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\activity\MainContentActivity$OnBackListener.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\activity\MainContentActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\activity\MenuBackgroundActivity$MyOnPageChangeListener.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\activity\MenuBackgroundActivity$MyPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\activity\MenuBackgroundActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\activity\MenuScanActivity$MyOnPageChangeListener.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\activity\MenuScanActivity$MyPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\activity\MenuScanActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\activity\MenuSettingActivity$MyOnPageChangeListener.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\activity\MenuSettingActivity$MyPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\activity\MenuSettingActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\activity\MusicListSearchActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\activity\MusicListSearchActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\activity\MusicListSearchActivity$3.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\activity\MusicListSearchActivity$4.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\activity\MusicListSearchActivity$MusicPlayBroadcast.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\activity\MusicListSearchActivity$SearchAdapter$ViewHolder.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\activity\MusicListSearchActivity$SearchAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\activity\MusicListSearchActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\activity\PlayQueueActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\activity\PlayQueueActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\activity\PlayQueueActivity$MyAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\activity\PlayQueueActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\adapter\LyricAdapter$ViewHolder.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\adapter\LyricAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\adapter\MyAdapter$1.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\adapter\MyAdapter$2.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\adapter\MyAdapter$ViewHolder.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\adapter\MyAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\aidl\IMediaService$Stub$Proxy.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\aidl\IMediaService$Stub.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\aidl\IMediaService.aidl" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\aidl\IMediaService.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\db\AlbumInfoDao.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\db\ArtistInfoDao.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\db\DatabaseHelper.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\db\FavoriteInfoDao.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\db\FolderInfoDao.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\fragment\LeftFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\fragment\MainFragment$MusicPlayBroadcast.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\fragment\MainFragment$MyGridViewAdapter$1.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\fragment\MainFragment$MyGridViewAdapter$ViewHolder.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\fragment\MainFragment$MyGridViewAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\fragment\MainFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\fragment\MenuBackgroundFragment$BgEntity.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\fragment\MenuBackgroundFragment$MyAdapter$ViewHolder.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\fragment\MenuBackgroundFragment$MyAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\fragment\MenuBackgroundFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\fragment\MenuFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\fragment\MenuScanFragment$1.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\fragment\MenuScanFragment$2.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\fragment\MenuScanFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\fragment\MenuSettingFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\fragment\RightFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\interfaces\IOnServiceConnectComplete.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\interfaces\IOnSlidingHandleViewClickListener.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\interfaces\IQueryFinished.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\lrc\LyricDownloadManager.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\lrc\LyricLoadHelper$1.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\lrc\LyricLoadHelper$LyricListener.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\lrc\LyricLoadHelper.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\lrc\LyricXMLParser$MyHandler.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\lrc\LyricXMLParser.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\model\AlbumInfo$1.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\model\AlbumInfo.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\model\ArtistInfo$1.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\model\ArtistInfo.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\model\FolderInfo$1.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\model\FolderInfo.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\model\LyricModel.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\model\LyricSentence.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\model\MusicInfo$1.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\model\MusicInfo.aidl" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\model\MusicInfo.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\model\SentenceModel.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\service\MediaService$ControlBroadcast.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\service\MediaService$MusicPlayBroadcast.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\service\MediaService$ServerStub.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\service\MediaService.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\service\MusicControl.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\service\ServiceManager$1.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\service\ServiceManager.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\shake\ShakeDetector$OnShakeListener.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\shake\ShakeDetector.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\slidemenu\CanvasTransformerBuilder$1.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\slidemenu\CanvasTransformerBuilder$2.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\slidemenu\CanvasTransformerBuilder$3.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\slidemenu\CanvasTransformerBuilder$4.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\slidemenu\CanvasTransformerBuilder$5.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\slidemenu\CanvasTransformerBuilder$6.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\slidemenu\CanvasTransformerBuilder.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\slidemenu\CustomViewAbove$1.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\slidemenu\CustomViewAbove$2.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\slidemenu\CustomViewAbove$OnPageChangeListener.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\slidemenu\CustomViewAbove$SimpleOnPageChangeListener.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\slidemenu\CustomViewAbove.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\slidemenu\CustomViewBehind.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\slidemenu\MenuInterface.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\slidemenu\SlidingMenu$1.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\slidemenu\SlidingMenu$2.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\slidemenu\SlidingMenu$CanvasTransformer.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\slidemenu\SlidingMenu$OnCloseListener.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\slidemenu\SlidingMenu$OnClosedListener.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\slidemenu\SlidingMenu$OnOpenListener.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\slidemenu\SlidingMenu$OnOpenedListener.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\slidemenu\SlidingMenu$SavedState$1.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\slidemenu\SlidingMenu$SavedState.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\slidemenu\SlidingMenu.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\storage\SPStorage.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\uimanager\AlbumBrowserManager$MyAdapter$ViewHolder.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\uimanager\AlbumBrowserManager$MyAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\uimanager\AlbumBrowserManager.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\uimanager\ArtistBrowserManager$MyAdapter$ViewHolder.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\uimanager\ArtistBrowserManager$MyAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\uimanager\ArtistBrowserManager.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\uimanager\FolderBrowserManager$MyAdapter$ViewHolder.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\uimanager\FolderBrowserManager$MyAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\uimanager\FolderBrowserManager.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\uimanager\MainBottomUIManager$1.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\uimanager\MainBottomUIManager.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\uimanager\MainUIManager.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\uimanager\MyMusicManager$1.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\uimanager\MyMusicManager$MusicPlayBroadcast.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\uimanager\MyMusicManager.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\uimanager\MyMusicUIManager$1.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\uimanager\MyMusicUIManager.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\uimanager\SlidingDrawerManager$1.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\uimanager\SlidingDrawerManager$2.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\uimanager\SlidingDrawerManager$3.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\uimanager\SlidingDrawerManager$LyricDownloadAsyncTask.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\uimanager\SlidingDrawerManager.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\uimanager\UIManager$ChangeBgReceiver.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\uimanager\UIManager$MyOnPageChangeListener.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\uimanager\UIManager$MyOnPageChangeListenerSub.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\uimanager\UIManager$MyPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\uimanager\UIManager$OnRefreshListener.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\uimanager\UIManager.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\utils\LrcUtil$1.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\utils\LrcUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\utils\MusicTimer$MyTimerTask.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\utils\MusicTimer.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\utils\MusicUtils.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\utils\SplashScreen$1.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\utils\SplashScreen.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\utils\StringHelper$CharType.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\utils\StringHelper.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\view\AlwaysMarqueeTextView.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\view\KeyBoardKeyView.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\view\LrcView.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\view\MyScrollLayout.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\view\MySlidingDrawer.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\bin\classes\com\ldw\music\view\onViewChangeListener.class" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\gen\com\example\mymusic\BuildConfig.java" afterPath="" />
-      <change type="DELETED" beforePath="J:\media\nufront\hms\NuMusic2\MyMusic\gen\com\example\mymusic\R.java" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\example\mymusic\BuildConfig.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\example\mymusic\R$attr.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\example\mymusic\R$dimen.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\example\mymusic\R$drawable.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\example\mymusic\R$id.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\example\mymusic\R$layout.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\example\mymusic\R$menu.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\example\mymusic\R$string.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\example\mymusic\R$style.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\example\mymusic\R.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\BuildConfig.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\MusicApp.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\R$anim.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\R$attr.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\R$color.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\R$dimen.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\R$drawable.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\R$id.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\R$layout.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\R$menu.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\R$string.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\R$style.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\R$styleable.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\R.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\activity\IConstants.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\activity\MainContentActivity$1.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\activity\MainContentActivity$2.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\activity\MainContentActivity$3.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\activity\MainContentActivity$4.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\activity\MainContentActivity$5.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\activity\MainContentActivity$OnBackListener.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\activity\MainContentActivity.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\activity\MenuBackgroundActivity$MyOnPageChangeListener.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\activity\MenuBackgroundActivity$MyPagerAdapter.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\activity\MenuBackgroundActivity.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\activity\MenuScanActivity$MyOnPageChangeListener.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\activity\MenuScanActivity$MyPagerAdapter.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\activity\MenuScanActivity.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\activity\MenuSettingActivity$MyOnPageChangeListener.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\activity\MenuSettingActivity$MyPagerAdapter.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\activity\MenuSettingActivity.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\activity\MusicListSearchActivity$1.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\activity\MusicListSearchActivity$2.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\activity\MusicListSearchActivity$3.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\activity\MusicListSearchActivity$4.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\activity\MusicListSearchActivity$MusicPlayBroadcast.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\activity\MusicListSearchActivity$SearchAdapter$ViewHolder.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\activity\MusicListSearchActivity$SearchAdapter.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\activity\MusicListSearchActivity.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\activity\PlayQueueActivity$1.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\activity\PlayQueueActivity$2.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\activity\PlayQueueActivity$MyAdapter.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\activity\PlayQueueActivity.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\adapter\LyricAdapter$ViewHolder.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\adapter\LyricAdapter.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\adapter\MyAdapter$1.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\adapter\MyAdapter$2.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\adapter\MyAdapter$ViewHolder.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\adapter\MyAdapter.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\aidl\IMediaService$Stub$Proxy.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\aidl\IMediaService$Stub.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\aidl\IMediaService.aidl" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\aidl\IMediaService.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\db\AlbumInfoDao.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\db\ArtistInfoDao.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\db\DatabaseHelper.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\db\FavoriteInfoDao.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\db\FolderInfoDao.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\fragment\LeftFragment.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\fragment\MainFragment$MusicPlayBroadcast.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\fragment\MainFragment$MyGridViewAdapter$1.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\fragment\MainFragment$MyGridViewAdapter$ViewHolder.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\fragment\MainFragment$MyGridViewAdapter.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\fragment\MainFragment.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\fragment\MenuBackgroundFragment$BgEntity.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\fragment\MenuBackgroundFragment$MyAdapter$ViewHolder.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\fragment\MenuBackgroundFragment$MyAdapter.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\fragment\MenuBackgroundFragment.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\fragment\MenuFragment.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\fragment\MenuScanFragment$1.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\fragment\MenuScanFragment$2.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\fragment\MenuScanFragment.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\fragment\MenuSettingFragment.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\fragment\RightFragment.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\interfaces\IOnServiceConnectComplete.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\interfaces\IOnSlidingHandleViewClickListener.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\interfaces\IQueryFinished.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\lrc\LyricDownloadManager.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\lrc\LyricLoadHelper$1.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\lrc\LyricLoadHelper$LyricListener.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\lrc\LyricLoadHelper.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\lrc\LyricXMLParser$MyHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\lrc\LyricXMLParser.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\model\AlbumInfo$1.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\model\AlbumInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\model\ArtistInfo$1.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\model\ArtistInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\model\FolderInfo$1.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\model\FolderInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\model\LyricModel.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\model\LyricSentence.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\model\MusicInfo$1.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\model\MusicInfo.aidl" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\model\MusicInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\model\SentenceModel.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\service\MediaService$ControlBroadcast.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\service\MediaService$MusicPlayBroadcast.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\service\MediaService$ServerStub.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\service\MediaService.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\service\MusicControl.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\service\ServiceManager$1.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\service\ServiceManager.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\shake\ShakeDetector$OnShakeListener.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\shake\ShakeDetector.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\slidemenu\CanvasTransformerBuilder$1.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\slidemenu\CanvasTransformerBuilder$2.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\slidemenu\CanvasTransformerBuilder$3.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\slidemenu\CanvasTransformerBuilder$4.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\slidemenu\CanvasTransformerBuilder$5.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\slidemenu\CanvasTransformerBuilder$6.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\slidemenu\CanvasTransformerBuilder.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\slidemenu\CustomViewAbove$1.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\slidemenu\CustomViewAbove$2.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\slidemenu\CustomViewAbove$OnPageChangeListener.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\slidemenu\CustomViewAbove$SimpleOnPageChangeListener.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\slidemenu\CustomViewAbove.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\slidemenu\CustomViewBehind.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\slidemenu\MenuInterface.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\slidemenu\SlidingMenu$1.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\slidemenu\SlidingMenu$2.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\slidemenu\SlidingMenu$CanvasTransformer.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\slidemenu\SlidingMenu$OnCloseListener.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\slidemenu\SlidingMenu$OnClosedListener.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\slidemenu\SlidingMenu$OnOpenListener.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\slidemenu\SlidingMenu$OnOpenedListener.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\slidemenu\SlidingMenu$SavedState$1.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\slidemenu\SlidingMenu$SavedState.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\slidemenu\SlidingMenu.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\storage\SPStorage.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\uimanager\AlbumBrowserManager$MyAdapter$ViewHolder.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\uimanager\AlbumBrowserManager$MyAdapter.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\uimanager\AlbumBrowserManager.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\uimanager\ArtistBrowserManager$MyAdapter$ViewHolder.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\uimanager\ArtistBrowserManager$MyAdapter.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\uimanager\ArtistBrowserManager.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\uimanager\FolderBrowserManager$MyAdapter$ViewHolder.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\uimanager\FolderBrowserManager$MyAdapter.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\uimanager\FolderBrowserManager.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\uimanager\MainBottomUIManager$1.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\uimanager\MainBottomUIManager.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\uimanager\MainUIManager.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\uimanager\MyMusicManager$1.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\uimanager\MyMusicManager$MusicPlayBroadcast.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\uimanager\MyMusicManager.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\uimanager\MyMusicUIManager$1.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\uimanager\MyMusicUIManager.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\uimanager\SlidingDrawerManager$1.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\uimanager\SlidingDrawerManager$2.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\uimanager\SlidingDrawerManager$3.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\uimanager\SlidingDrawerManager$LyricDownloadAsyncTask.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\uimanager\SlidingDrawerManager.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\uimanager\UIManager$ChangeBgReceiver.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\uimanager\UIManager$MyOnPageChangeListener.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\uimanager\UIManager$MyOnPageChangeListenerSub.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\uimanager\UIManager$MyPagerAdapter.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\uimanager\UIManager$OnRefreshListener.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\uimanager\UIManager.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\utils\LrcUtil$1.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\utils\LrcUtil.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\utils\MusicTimer$MyTimerTask.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\utils\MusicTimer.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\utils\MusicUtils.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\utils\SplashScreen$1.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\utils\SplashScreen.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\utils\StringHelper$CharType.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\utils\StringHelper.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\view\AlwaysMarqueeTextView.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\view\KeyBoardKeyView.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\view\LrcView.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\view\MyScrollLayout.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\view\MySlidingDrawer.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\bin\classes\com\ldw\music\view\onViewChangeListener.class" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\gen\com\example\mymusic\BuildConfig.java" afterPath="" />
+      <change type="DELETED" beforePath="J:\media\nufront\ME\meTestJavaProgram\UI\MyMusic\gen\com\example\mymusic\R.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/ldw/music/db/MusicInfoDao.class" afterPath="$PROJECT_DIR$/bin/classes/com/ldw/music/db/MusicInfoDao.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.classpath" afterPath="$PROJECT_DIR$/.classpath" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.project" afterPath="$PROJECT_DIR$/.project" />
@@ -988,9 +988,9 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane" />
+      <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -999,24 +999,13 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyMusic" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyMusic" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="recentsLimit" value="5" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="2520c4f7" />
   </component>
   <component name="RunManager" selected="Android Application.MyMusic">
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -1122,7 +1111,7 @@
       <option name="DEPLOY" value="true" />
       <option name="ARTIFACT_NAME" value="" />
       <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="true" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="" />
       <option name="USE_COMMAND_LINE" value="true" />
       <option name="COMMAND_LINE" value="" />
@@ -1158,43 +1147,43 @@
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e622b239-701f-4ec0-8e2e-47628942ba16" name="Default" comment="" />
-      <created>1434543752894</created>
+      <changelist id="3b372166-5597-4c0b-80fc-154761ae2c4d" name="Default" comment="" />
+      <created>1434591423450</created>
       <option name="number" value="Default" />
-      <updated>1434543752894</updated>
+      <updated>1434591423450</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="72" y="-9" width="1537" height="918" extended-state="6" />
-    <editor active="false" />
+    <frame x="72" y="-9" width="1537" height="918" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32880434" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32880434" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32880434" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32992503" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32880434" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24948876" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24948876" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">

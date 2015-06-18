@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">SC_DMC</string>
+    <string name="app_url">https://github.com</string>
+
     <string name="version">Version</string>
 
     <string name="hello_world">Hello world!</string>
@@ -40,4 +42,40 @@
     <string name="about_licenses_other"></string>
     <string name="source">Source Code</string>
     <string name="source_url" translatable="false">http://github.com/trishika/droidupnp</string>
+
+
+
+    <!-- Popup -->
+    <string name="OK">OK</string>
+    <string name="loading">Loading…</string>
+    <string name="selectRenderer">Select a Renderer</string>
+    <string name="noRenderer">There is no renderer available</string>
+
+    <!-- Long click options -->
+    <string name="no_action_available">No action available</string>
+    <string name="failed_action">Failed to read the item</string>
+
+    <!-- Now Playing -->
+    <string name="duration">00:00:00</string>
+
+    <!-- Now Playing Footer -->
+    <string name="play">Play</string>
+    <string name="pause">Pause</string>
+    <string name="stop">Stop</string>
+    <string name="mute">Mute</string>
+
+    <!-- Device Info -->
+    <string name="manufacturer">Manufacturer</string>
+    <string name="manufacturer_url">Manufacturer URL</string>
+    <string name="model_name">Model name</string>
+    <string name="model_url">Model URL</string>
+    <string name="model_number">Model number</string>
+    <string name="model_desc">Model description</string>
+    <string name="presention_url">Presentation URL</string>
+    <string name="desc_xml">Description XML</string>
+    <string name="udn">UDN</string>
+    <string name="separator"> : </string>
+
+    <string name="device_list_empty">No device available</string>
+
 </resources>

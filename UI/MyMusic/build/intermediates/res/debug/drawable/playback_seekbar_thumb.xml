@@ -6,4 +6,4 @@
     <item android:drawable="@drawable/playback_seekbar_thumb_default" android:state_enabled="true"/>
     <item android:drawable="@drawable/playback_seekbar_thumb_default" android:state_focused="false"/>
 
-</selector><!-- From: file:/J:/media/nufront/hms/NuMusic2/MyMusic/res/drawable/playback_seekbar_thumb.xml -->
+</selector><!-- From: file:/J:/media/nufront/ME/meTestJavaProgram/UI/MyMusic/res/drawable/playback_seekbar_thumb.xml -->

@@ -38,16 +38,54 @@
     Layout for query suggestion rows
     <item name="suggestionRowLayout">...</item>
         -->
-
-
-
     </style>
-    <color name="dark">#444444</color>
+    <style name="rendererTitle" parent="@style/rendererText">
+        <item name="android:textSize">18sp</item>
+    </style>
+
     <style name="deviceListLabel">
         <item name="android:textColor">@color/dark</item>
     </style>
     <style name="deviceListSeparator">
         <item name="android:background">@color/dark</item>
+    </style>
+
+
+    <!-- Renderer style -->
+    <style name="renderer">
+        <item name="android:background">?android:attr/colorBackground</item>
+    </style>
+
+    <style name="rendererText" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <drawable name="play">@drawable/ic_action_play</drawable>
+    <drawable name="pause">@drawable/ic_action_pause</drawable>
+    <drawable name="stop">@drawable/ic_action_stop</drawable>
+    <drawable name="volume">@drawable/ic_action_volume_on</drawable>
+    <drawable name="volume_mute">@drawable/ic_action_volume_muted</drawable>
+
+
+    <style name="rendererSubtitle" parent="@style/rendererText">
+        <item name="android:textStyle">italic</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+
+    <style name="browsingItemText" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/darker</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="browsingItemTitle" parent="@style/browsingItemText">
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="browsingItemSubtitle" parent="@style/browsingItemText">
+    </style>
+    <style name="browsingItemCount" parent="@style/browsingItemText">
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
 </resources>

@@ -3,4 +3,4 @@
   xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_pressed="true" android:drawable="@drawable/sleep_button_pressed" />
     <item android:drawable="@drawable/sleep_button" />
-</selector><!-- From: file:/J:/media/nufront/hms/NuMusic2/MyMusic/res/drawable/sleep_btn_selector.xml -->
+</selector><!-- From: file:/J:/media/nufront/ME/meTestJavaProgram/UI/MyMusic/res/drawable/sleep_btn_selector.xml -->

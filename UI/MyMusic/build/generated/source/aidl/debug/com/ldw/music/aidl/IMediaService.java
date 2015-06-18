@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: J:\\media\\nufront\\hms\\NuMusic2\\MyMusic\\src\\com\\ldw\\music\\aidl\\IMediaService.aidl
+ * Original file: J:\\media\\nufront\\ME\\meTestJavaProgram\\UI\\MyMusic\\src\\com\\ldw\\music\\aidl\\IMediaService.aidl
  */
 package com.ldw.music.aidl;
 public interface IMediaService extends android.os.IInterface

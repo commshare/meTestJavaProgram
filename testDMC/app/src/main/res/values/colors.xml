@@ -25,4 +25,15 @@
     <color name="myNavigationColor">#000000</color>
 
     <color name="selected_gray">#ffdbdbdb</color>
+
+
+
+    <color name="blue">#379293</color>
+    <color name="blue_dark">#1C7475</color>
+    <color name="blue_trans">#77379293</color>
+    <color name="grey">#DDDDDD</color>
+    <color name="greyer">#AACCCCCC</color>
+    <color name="light_grey">#E5E5E5</color>
+    <color name="darker">#222222</color>
+    <color name="dark">#444444</color>
 </resources>
