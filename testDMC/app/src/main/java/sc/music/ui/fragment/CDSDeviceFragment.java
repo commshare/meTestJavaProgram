@@ -18,7 +18,10 @@ import java.util.Observer;
 /**
  * Created by Administrator on 2015/6/5.
  */
-public class CDSDeviceFragment extends UpnpDeviceListFragment implements Observer {
+public class CDSDeviceFragment extends UpnpDeviceListFragment implements Observer
+//extends Fragment
+//
+{
 
 //    private static View view=null;
 //
@@ -70,6 +73,7 @@ public class CDSDeviceFragment extends UpnpDeviceListFragment implements Observe
         return false;
     }
 
+    //点击了设备之后，就会到这里
     @Override
     protected void select(IUpnpDevice device)
     {
@@ -79,9 +83,11 @@ public class CDSDeviceFragment extends UpnpDeviceListFragment implements Observe
     @Override
     protected void select(IUpnpDevice device, boolean force)
     {
+        //传递给dmc
         Main.upnpServiceController.setSelectedContentDirectory(device, force);
     }
 
+    //点击一个设备
     @Override
     public void onListItemClick(ListView l, View v, int position, long id)
     {
