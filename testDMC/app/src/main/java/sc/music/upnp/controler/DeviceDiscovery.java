@@ -27,8 +27,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import sc.music.Main;
-import sc.music.upnp.cling.IDeviceDiscoveryObserver;
+
 import sc.music.upnp.model.ICallableFilter;
+import sc.music.upnp.model.IDeviceDiscoveryObserver;
 import sc.music.upnp.model.IRegistryListener;
 import sc.music.upnp.model.IServiceListener;
 import sc.music.upnp.model.IUpnpDevice;

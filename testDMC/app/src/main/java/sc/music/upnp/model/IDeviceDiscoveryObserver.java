@@ -1,6 +1,4 @@
-package sc.music.upnp.cling;
-
-import sc.music.upnp.model.IUpnpDevice;
+package sc.music.upnp.model;
 
 public interface IDeviceDiscoveryObserver {
 

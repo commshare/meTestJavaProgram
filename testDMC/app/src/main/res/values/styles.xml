@@ -87,5 +87,7 @@
         <item name="android:textColor">@color/blue</item>
         <item name="android:textStyle">bold</item>
     </style>
-
+    <style name="DrawerText" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/darker</item>
+    </style>
 </resources>

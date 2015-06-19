@@ -50,7 +50,7 @@ import java.util.concurrent.Callable;
 import sc.droid.dmc.R;
 import sc.music.Main;
 import sc.music.upnp.cling.CallableContentDirectoryFilter;
-import sc.music.upnp.cling.IDeviceDiscoveryObserver;
+
 import sc.music.upnp.controler.DIDLObjectDisplay;
 import sc.music.upnp.didl.DIDLDevice;
 import sc.music.upnp.didl.IDIDLContainer;
@@ -58,6 +58,7 @@ import sc.music.upnp.didl.IDIDLItem;
 import sc.music.upnp.didl.IDIDLObject;
 import sc.music.upnp.didl.IDIDLParentContainer;
 import sc.music.upnp.model.IContentDirectoryCommand;
+import sc.music.upnp.model.IDeviceDiscoveryObserver;
 import sc.music.upnp.model.IRendererCommand;
 import sc.music.upnp.model.IUpnpDevice;
 import uk.co.senab.actionbarpulltorefresh.library.ActionBarPullToRefresh;
