@@ -40,7 +40,9 @@ public class Factory implements IFactory {
 	@Override
 	public IContentDirectoryCommand createContentDirectoryCommand()
 	{
+		//cling的服务
 		AndroidUpnpService aus = ((ServiceListener) Main.upnpServiceController.getServiceListener()).getUpnpService();
+		//cling的dmc
 		ControlPoint cp = null;
 		if (aus != null)
 			cp = aus.getControlPoint();
@@ -66,6 +68,7 @@ public class Factory implements IFactory {
 	@Override
 	public IUpnpServiceController createUpnpServiceController(Context ctx)
 	{
+		//这个类才是dmc啊
 		return new ServiceController(ctx);
 	}
 

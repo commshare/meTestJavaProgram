@@ -120,16 +120,19 @@ public class ContentDirectoryFragment extends ListFragment implements Observer
 
 	private DeviceObserver deviceObserver;
 
+	//实现这个接口的目的是啥
 	public class DeviceObserver implements IDeviceDiscoveryObserver
 	{
 		ContentDirectoryFragment cdf;
 
+		//构造函数要传入一个ContentDirectoryFragment
 		public DeviceObserver(ContentDirectoryFragment cdf){
 			this.cdf = cdf;
 		}
 
 		@Override
 		public void addedDevice(IUpnpDevice device) {
+			//如果有选中的设备，就让ContentDirectoryFragment更新
 			if(Main.upnpServiceController.getSelectedContentDirectory() == null)
 				cdf.update();
 		}
@@ -141,6 +144,7 @@ public class ContentDirectoryFragment extends ListFragment implements Observer
 		}
 	}
 
+	//这个adapter是显示dms的cds的
 	public class CustomAdapter extends ArrayAdapter<DIDLObjectDisplay>
 	{
 		private final int layout;
@@ -186,11 +190,13 @@ public class ContentDirectoryFragment extends ListFragment implements Observer
 
 		setListAdapter(contentList);
 
+		//创建了这个设备观察者
 		deviceObserver = new DeviceObserver(this);
 		Main.upnpServiceController.getContentDirectoryDiscovery().addObserver(deviceObserver);
 
 		// Listen to content directory change
 		if (Main.upnpServiceController != null)
+			//监听啥？
 			Main.upnpServiceController.addSelectedContentDirectoryObserver(this);
 		else
 			Log.w(TAG, "upnpServiceController was not ready !!!");

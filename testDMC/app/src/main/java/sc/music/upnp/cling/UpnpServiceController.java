@@ -31,6 +31,7 @@ import sc.music.upnp.controler.RendererDiscovery;
 import sc.music.upnp.model.CObservable;
 import sc.music.upnp.model.IUpnpDevice;
 
+//这是DMC后台服务的具体实现？
 public abstract class UpnpServiceController implements IUpnpServiceController {
 
 	private static final String TAG = "UpnpServiceController";
@@ -61,7 +62,9 @@ public abstract class UpnpServiceController implements IUpnpServiceController {
 		rendererObservable = new CObservable();
 		contentDirectoryObservable = new CObservable();
 
+		//搜寻dms的服务
 		contentDirectoryDiscovery = new ContentDirectoryDiscovery(getServiceListener());
+		//搜寻dmr的服务
 		rendererDiscovery = new RendererDiscovery(getServiceListener());
 	}
 
@@ -72,6 +75,7 @@ public abstract class UpnpServiceController implements IUpnpServiceController {
 		setSelectedRenderer(renderer, false);
 	}
 
+	//经常调用的是这个
 	@Override
 	public void setSelectedRenderer(IUpnpDevice renderer, boolean force)
 	{
@@ -80,6 +84,8 @@ public abstract class UpnpServiceController implements IUpnpServiceController {
 			return;
 
 		this.renderer = renderer;
+
+		//通知所有观察者
 		rendererObservable.notifyAllObservers();
 	}
 

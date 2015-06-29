@@ -83,11 +83,11 @@ public class CDSDeviceFragment extends UpnpDeviceListFragment implements Observe
     @Override
     protected void select(IUpnpDevice device, boolean force)
     {
-        //传递给dmc
+        //传入一个设备，丢给dmc知道
         Main.upnpServiceController.setSelectedContentDirectory(device, force);
     }
 
-    //点击一个设备
+    //选中一个设备
     @Override
     public void onListItemClick(ListView l, View v, int position, long id)
     {

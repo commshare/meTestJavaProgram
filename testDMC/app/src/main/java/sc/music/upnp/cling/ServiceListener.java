@@ -50,7 +50,7 @@ import sc.music.util.Network;
 @SuppressWarnings("rawtypes")
 public class ServiceListener implements IServiceListener
 {
-	private static final String TAG = "Cling.ServiceListener";
+	private static final String TAG = "scdmc.ServiceListener";
 
 	protected AndroidUpnpService/*cling库*/ upnpService;
 	protected ArrayList<IRegistryListener> waitingListener;
@@ -76,18 +76,21 @@ public class ServiceListener implements IServiceListener
 	@Override
 	public Collection<IUpnpDevice> getDeviceList()
 	{
+		//看来设备列表，不是在这里获取到的，没影响啊。
 		ArrayList<IUpnpDevice> deviceList = new ArrayList<IUpnpDevice>();
 		if(upnpService != null && upnpService.getRegistry() != null) {
 			for (Device device : upnpService.getRegistry().getDevices()) {
 				deviceList.add(new CDevice(device));
 			}
 		}
+//		deviceList.add(new CDevice(mediaServer.getDevice()));
 		return deviceList;
 	}
 
 	@Override
 	public Collection<IUpnpDevice> getFilteredDeviceList(ICallableFilter filter)
 	{
+		Log.e("scdmc.ServiceListener","getFilteredDeviceList");
 		ArrayList<IUpnpDevice> deviceList = new ArrayList<IUpnpDevice>();
 		try
 		{
@@ -117,6 +120,7 @@ public class ServiceListener implements IServiceListener
 			Log.i(TAG, "Service connexion");
 			upnpService = (AndroidUpnpService) service;
 
+			//是否支持本地dms
 			SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(ctx);
 			if(sharedPref.getBoolean(Settings.CONTENTDIRECTORY_SERVICE, true))
 			{
@@ -128,12 +132,13 @@ public class ServiceListener implements IServiceListener
 						//使用的是自己的服务器，传入ip地址
 						mediaServer = new MediaServer(Network.getLocalIpAddress(ctx), ctx);
 						mediaServer.start();
+						Log.e(TAG,"after mediaServer start");
 					}
 					else
 					{
 						mediaServer.restart();//重启服务
 					}
-					//注册本地设备及服务
+					//注册本地设备及服务，这是注册给cling库了
 					upnpService.getRegistry().addDevice(mediaServer.getDevice());
 				}
 				catch (UnknownHostException e1)
@@ -164,6 +169,7 @@ public class ServiceListener implements IServiceListener
 			}
 
 			// Search asynchronously for all devices, they will respond soon
+			//搜寻的设备
 			upnpService.getControlPoint().search();
 		}
 
@@ -204,7 +210,7 @@ public class ServiceListener implements IServiceListener
 		// Get ready for future device advertisements
 		upnpService.getRegistry().addListener(new CRegistryListener(registryListener));
 
-		// Now add all devices to the list we already know about
+		// Now add all devices to the list we already know about 加入所有的设备
 		for (Device device : upnpService.getRegistry().getDevices())
 		{
 			registryListener.deviceAdded(new CDevice(device));

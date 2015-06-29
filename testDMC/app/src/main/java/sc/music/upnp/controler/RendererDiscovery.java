@@ -26,6 +26,7 @@ import sc.music.upnp.model.ICallableFilter;
 import sc.music.upnp.model.IServiceListener;
 import sc.music.upnp.model.IUpnpDevice;
 
+//用来发现dmr的
 public class RendererDiscovery extends DeviceDiscovery {
 
 	protected static final String TAG = "RendererDeviceFragment";

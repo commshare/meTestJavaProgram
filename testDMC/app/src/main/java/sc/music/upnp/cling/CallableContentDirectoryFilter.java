@@ -15,6 +15,7 @@ public class CallableContentDirectoryFilter implements ICallableFilter {
 	@Override
 	public Boolean call() throws Exception
 	{
-		return device.asService("ContentDirectory");
+		//return device.asService("ContentDirectory");
+		return device.asDeviceType("SCMediaServer");
 	}
 }

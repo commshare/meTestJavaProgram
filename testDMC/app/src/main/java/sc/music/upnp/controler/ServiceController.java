@@ -31,6 +31,7 @@ import sc.music.upnp.cling.ServiceListener;
 import sc.music.upnp.cling.UpnpService;
 import sc.music.upnp.cling.UpnpServiceController;
 
+//这还是个实际的服务类
 public class ServiceController extends UpnpServiceController
 {
 	private static final String TAG = "Cling.ServiceController";

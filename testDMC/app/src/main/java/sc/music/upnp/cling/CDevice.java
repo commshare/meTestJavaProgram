@@ -105,7 +105,10 @@ public class CDevice implements IUpnpDevice /*自定义的接口*/{
 	{
 		return (device.findService(new UDAServiceType(service)) != null);
 	}
-
+	@Override
+	public boolean asDeviceType(String type) {
+		return device.getType().getType().equals(type);
+	}
 	@Override
 	public String getManufacturer()
 	{

@@ -30,6 +30,7 @@ public class UpnpService extends AndroidUpnpServiceImpl {
 	@Override
 	protected AndroidUpnpServiceConfiguration createConfiguration()
 	{
+//		7秒查询一次？
 		return new AndroidUpnpServiceConfiguration() {
 
 			@Override

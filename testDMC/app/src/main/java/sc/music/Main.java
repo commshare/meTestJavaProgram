@@ -90,7 +90,7 @@ public class Main extends /*ActionBarActivity废弃*/AppCompatActivity  implemen
         Log.d(TAG, "onCreated : " + savedInstanceState + factory + upnpServiceController);
 
         // Use cling factory
-        if (factory == null)
+        if (factory == null)//实现dmc的
             factory = new sc.music.upnp.controler.Factory();
 
         // Upnp service
@@ -456,7 +456,9 @@ public class Main extends /*ActionBarActivity废弃*/AppCompatActivity  implemen
     }
     public void refresh()
     {
+        //刷新设备
         upnpServiceController.getServiceListener().refresh();
+        //刷新设备对应的文件列表
         ContentDirectoryFragment cd = getContentDirectoryFragment();
         if(cd!=null)
             cd.refresh();

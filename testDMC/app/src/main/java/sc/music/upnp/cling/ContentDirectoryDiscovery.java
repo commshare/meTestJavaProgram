@@ -25,9 +25,10 @@ import sc.music.upnp.model.ICallableFilter;
 import sc.music.upnp.model.IServiceListener;
 import sc.music.upnp.model.IUpnpDevice;
 
+//dms的搜寻服务在这里啊
 public class ContentDirectoryDiscovery extends DeviceDiscovery {
 
-	protected static final String TAG = "ContentDirectoryDeviceFragment";
+	protected static final String TAG = "ContentDirectoryDiscovery";
 
 	public ContentDirectoryDiscovery(IServiceListener serviceListener)
 	{

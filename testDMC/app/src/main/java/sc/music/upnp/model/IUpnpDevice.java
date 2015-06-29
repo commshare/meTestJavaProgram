@@ -52,6 +52,7 @@ public interface IUpnpDevice {
 	public String getUID();
 
 	public boolean asService(String service);
+	public boolean asDeviceType(String type);
 
 	public void printService();
 

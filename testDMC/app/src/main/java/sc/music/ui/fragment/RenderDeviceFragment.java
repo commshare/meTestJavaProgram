@@ -72,9 +72,11 @@ public class RenderDeviceFragment  extends  UpnpDeviceListFragment implements Ob
     @Override
     protected void select(IUpnpDevice device, boolean force)
     {
+        //选中的设备保存在这里
         Main.upnpServiceController.setSelectedRenderer(device, force);
     }
 
+    //这是选中了一个dmr
     @Override
     public void onListItemClick(ListView l, View v, int position, long id)
     {
@@ -94,6 +96,7 @@ public class RenderDeviceFragment  extends  UpnpDeviceListFragment implements Ob
             @Override
             public void run()
             {
+                //得到当前选中的dmr
                 IUpnpDevice device = Main.upnpServiceController.getSelectedRenderer();
                 if (device == null)
                 {
@@ -103,6 +106,7 @@ public class RenderDeviceFragment  extends  UpnpDeviceListFragment implements Ob
                 }
                 else
                 {
+                    //把dmr加入
                     addedDevice(device);
                 }
             }
