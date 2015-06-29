@@ -375,6 +375,9 @@ public class Main extends /*ActionBarActivity废弃*/AppCompatActivity  implemen
             case R.id.action_search:
                 Toast.makeText(Main.this, "ab_search", Toast.LENGTH_SHORT).show();
                 break;
+            case R.id.menu_quit:
+                finish();
+                break;
             default:
                 break;
         }
