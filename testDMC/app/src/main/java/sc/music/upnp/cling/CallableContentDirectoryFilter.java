@@ -1,10 +1,12 @@
 package sc.music.upnp.cling;
 
+import android.util.Log;
+
 import sc.music.upnp.model.ICallableFilter;
 import sc.music.upnp.model.IUpnpDevice;
 
 public class CallableContentDirectoryFilter implements ICallableFilter {
-
+	private String TAG="CallableContentDirectoryFilter";
 	private IUpnpDevice device;
 
 	public void setDevice(IUpnpDevice device)
@@ -15,6 +17,7 @@ public class CallableContentDirectoryFilter implements ICallableFilter {
 	@Override
 	public Boolean call() throws Exception
 	{
+		Log.e(TAG, "filter dms");
 		//return device.asService("ContentDirectory");
 		return device.asDeviceType("SCMediaServer");
 	}

@@ -45,9 +45,9 @@ public class PagerFragmentAdapter extends FragmentPagerAdapter {
         switch(position) {
 
             case 0: return LocalMusicFragment.newInstance();
-            //case 1: return BaseCardFragment.newInstance(1);
+            case 1: return BaseCardFragment.newInstance(1);
             case 2: return BaseCardFragment.newInstance(2);
-            case 1: return DeviceFragment.newInstance();
+            case 3: return DeviceFragment.newInstance();
             default: return BaseCardFragment.newInstance(3);
         }
     }

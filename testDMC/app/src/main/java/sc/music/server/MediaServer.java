@@ -96,8 +96,8 @@ public class MediaServer extends fi.iki.elonen.SimpleWebServer{
             Log.e(TAG, "Error is " + v.getMessage());
         }
 
-
-        DeviceType type = new UDADeviceType("MediaServer", 1);
+        //使用SCMediaServer用来过滤DMS
+        DeviceType type = new UDADeviceType("SCMediaServer", 1);
 
         //本地设备
         localDevice = new LocalDevice(new DeviceIdentity(udn), type, details, localService);
