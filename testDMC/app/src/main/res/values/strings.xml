@@ -76,6 +76,6 @@
     <string name="udn">UDN</string>
     <string name="separator"> : </string>
 
-    <string name="device_list_empty">没看到DMS</string>
+    <string name="device_list_empty">没看到DLNA设备</string>
 
 </resources>

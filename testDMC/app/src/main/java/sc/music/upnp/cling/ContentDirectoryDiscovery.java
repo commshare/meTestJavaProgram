@@ -59,11 +59,12 @@ public class ContentDirectoryDiscovery extends DeviceDiscovery {
 	@Override
 	protected void select(IUpnpDevice device, boolean force)
 	{
+		//让dmc选择某个dms
 		Main.upnpServiceController.setSelectedContentDirectory(device, force);
 	}
 
 	@Override
-	protected void removed(IUpnpDevice d)
+	protected void removed(IUpnpDevice d)//让DMC放弃选择某个设备
 	{
 		if (Main.upnpServiceController != null && Main.upnpServiceController.getSelectedContentDirectory() != null
 				&& d.equals(Main.upnpServiceController.getSelectedContentDirectory()))

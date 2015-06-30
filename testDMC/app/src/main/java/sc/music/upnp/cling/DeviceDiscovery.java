@@ -67,7 +67,7 @@ public abstract class DeviceDiscovery {
 
 	public class BrowsingRegistryListener implements IRegistryListener {
 
-		@Override
+		@Override //发一个设备来
 		public void deviceAdded(final IUpnpDevice device)
 		{
 			Log.v(TAG, "New device detected : " + device.getDisplayString());
@@ -77,6 +77,7 @@ public abstract class DeviceDiscovery {
 				if (isSelected(device))
 				{
 					Log.i(TAG, "Reselect device to refresh it");
+					//传递一个选中的dms进来
 					select(device, true);
 				}
 

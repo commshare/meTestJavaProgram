@@ -117,13 +117,13 @@ public class ContentDirectoryFragment extends ListFragment implements Observer
 			});
 		}
 	}
-
+	//这个类究竟是干啥的？
 	private DeviceObserver deviceObserver;
 
-	//实现这个接口的目的是啥
+	//本地设备会从这里传递进来，当前的操作是更新UI，我可以变成触发其他功能
 	public class DeviceObserver implements IDeviceDiscoveryObserver
 	{
-		ContentDirectoryFragment cdf;
+		ContentDirectoryFragment cdf; //UI啊
 
 		//构造函数要传入一个ContentDirectoryFragment
 		public DeviceObserver(ContentDirectoryFragment cdf){
@@ -132,9 +132,11 @@ public class ContentDirectoryFragment extends ListFragment implements Observer
 
 		@Override
 		public void addedDevice(IUpnpDevice device) {
+			//有设备传入啊
+			Log.e(TAG,"CDF DeviceObserver,ADD A device :"+device.getFriendlyName());
 			//如果有选中的设备，就让ContentDirectoryFragment更新
 			if(Main.upnpServiceController.getSelectedContentDirectory() == null)
-				cdf.update();
+				cdf.update();//更新UI
 		}
 
 		@Override
@@ -192,9 +194,11 @@ public class ContentDirectoryFragment extends ListFragment implements Observer
 
 		//创建了这个设备观察者
 		deviceObserver = new DeviceObserver(this);
+		//dms的设备观察者加入到“内容目录服务设备发现”观察者列表中了。
+		//一旦设备被发现，就会通知设备观察者
 		Main.upnpServiceController.getContentDirectoryDiscovery().addObserver(deviceObserver);
 
-		// Listen to content directory change
+		// Listen to content directory change监听内容目录的改变
 		if (Main.upnpServiceController != null)
 			//监听啥？
 			Main.upnpServiceController.addSelectedContentDirectoryObserver(this);
@@ -204,7 +208,7 @@ public class ContentDirectoryFragment extends ListFragment implements Observer
 		if (savedInstanceState != null
 			&& savedInstanceState.getStringArray(STATE_TREE) != null
 			&& Main.upnpServiceController.getSelectedContentDirectory() != null
-			&& 0 == Main.upnpServiceController.getSelectedContentDirectory().getUID()
+			&& 0 == Main.upnpServiceController.getSelectedContentDirectory().getUID()/*获取所选中设备的UID*/
 			.compareTo(savedInstanceState.getString(STATE_CONTENTDIRECTORY)))
 		{
 			Log.i(TAG, "Restore previews state");
@@ -216,7 +220,7 @@ public class ContentDirectoryFragment extends ListFragment implements Observer
 			device = Main.upnpServiceController.getSelectedContentDirectory();
 			contentDirectoryCommand = Main.factory.createContentDirectoryCommand();
 		}
-
+		//长按设备名字
 		getListView().setOnItemLongClickListener( new AdapterView.OnItemLongClickListener() {
 			@Override
 			public boolean onItemLongClick(AdapterView<?> adapterView, View v, int position, long id) {
@@ -330,6 +334,7 @@ public class ContentDirectoryFragment extends ListFragment implements Observer
 
 	public Boolean goBack()
 	{
+		Log.e(TAG,"goBack()");
 		if(tree == null || tree.isEmpty())
 		{
 			if(Main.upnpServiceController.getSelectedContentDirectory() != null)
@@ -456,7 +461,7 @@ public class ContentDirectoryFragment extends ListFragment implements Observer
 				tree = null;
 			}
 
-			// Fill with the content directory list
+			// Fill with the content directory list 用当前设备的列表来填充
 			final Collection<IUpnpDevice> upnpDevices = Main.upnpServiceController.getServiceListener()
 				.getFilteredDeviceList(new CallableContentDirectoryFilter());
 
@@ -480,6 +485,7 @@ public class ContentDirectoryFragment extends ListFragment implements Observer
 		if (contentDirectoryCommand == null)
 			return; // Can't do anything if upnp not ready
 
+		//设备为空
 		if (device == null || !device.equals(Main.upnpServiceController.getSelectedContentDirectory()))
 		{
 			device = Main.upnpServiceController.getSelectedContentDirectory();

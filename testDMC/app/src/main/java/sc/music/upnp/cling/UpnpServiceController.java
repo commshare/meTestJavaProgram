@@ -95,6 +95,7 @@ public abstract class UpnpServiceController implements IUpnpServiceController {
 		setSelectedContentDirectory(contentDirectory, false);
 	}
 
+	//dms在这里被拿到
 	@Override
 	public void setSelectedContentDirectory(IUpnpDevice contentDirectory, boolean force)
 	{
