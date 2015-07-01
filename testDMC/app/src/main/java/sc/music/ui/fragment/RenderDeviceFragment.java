@@ -72,7 +72,7 @@ public class RenderDeviceFragment  extends  UpnpDeviceListFragment implements Ob
     @Override
     protected void select(IUpnpDevice device, boolean force)
     {
-        //选中的设备保存在这里
+        //选中一个dmr
         Main.upnpServiceController.setSelectedRenderer(device, force);
     }
 

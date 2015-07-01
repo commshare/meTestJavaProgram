@@ -76,12 +76,12 @@ public class RendererFragment extends Fragment implements Observer
 
 	public void hide()
 	{
-		Activity a = getActivity();
-		if (a==null)
-			return;
-		a.findViewById(R.id.progressBar).setVisibility(View.INVISIBLE);
-		a.findViewById(R.id.separator).setVisibility(View.INVISIBLE);
-		getFragmentManager().beginTransaction().hide(this).commit();
+//		Activity a = getActivity();
+//		if (a==null)
+//			return;
+//		a.findViewById(R.id.progressBar).setVisibility(View.INVISIBLE);
+//		a.findViewById(R.id.separator).setVisibility(View.INVISIBLE);
+//		getFragmentManager().beginTransaction().hide(this).commit();
 	}
 
 	public void show()
@@ -217,6 +217,7 @@ public class RendererFragment extends Fragment implements Observer
 				public void run()
 				{
 					try {
+						//在这里显示
 						show();
 
 						TextView title = (TextView) a.findViewById(R.id.title);
