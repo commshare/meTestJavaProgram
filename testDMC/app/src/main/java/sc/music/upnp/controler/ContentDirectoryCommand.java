@@ -87,8 +87,9 @@ public class ContentDirectoryCommand implements IContentDirectoryCommand
 	{
 		ArrayList<DIDLObjectDisplay> list = new ArrayList<DIDLObjectDisplay>();
 
-		if (parent != null)
-			list.add(new DIDLObjectDisplay(new ClingDIDLParentContainer(parent)));
+		//有父类，就会增加这个东东，用来返回的
+//		if (parent != null)
+//			list.add(new DIDLObjectDisplay(new ClingDIDLParentContainer(parent)));
 
 		for (Container item : didl.getContainers())
 		{
