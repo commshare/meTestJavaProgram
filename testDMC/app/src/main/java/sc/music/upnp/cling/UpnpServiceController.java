@@ -89,6 +89,7 @@ public abstract class UpnpServiceController implements IUpnpServiceController {
 		rendererObservable.notifyAllObservers();
 	}
 
+	//选中一个dms
 	@Override
 	public void setSelectedContentDirectory(IUpnpDevice contentDirectory)
 	{
@@ -104,6 +105,7 @@ public abstract class UpnpServiceController implements IUpnpServiceController {
 				&& this.contentDirectory.equals(contentDirectory))
 			return;
 
+		//在这里获得dms啊
 		this.contentDirectory = contentDirectory;
 		contentDirectoryObservable.notifyAllObservers();
 	}

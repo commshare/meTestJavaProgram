@@ -74,7 +74,7 @@ public class ContentDirectoryFragment extends ListFragment implements Observer
 	private LinkedList<String> tree = null;
 	private String currentID = null;
 	private IUpnpDevice device;
-
+	private IUpnpDevice localdevice;
 	private IContentDirectoryCommand contentDirectoryCommand;
 
 	static final String STATE_CONTENTDIRECTORY = "contentDirectory";
@@ -136,7 +136,8 @@ public class ContentDirectoryFragment extends ListFragment implements Observer
 			Log.e(TAG,"CDF DeviceObserver,ADD A device :"+device.getFriendlyName());
 			//如果有选中的设备，就让ContentDirectoryFragment更新
 			if(Main.upnpServiceController.getSelectedContentDirectory() == null)
-				cdf.update();//更新UI
+				//cdf.update();//更新UI
+			cdf.update(device);
 		}
 
 		@Override
@@ -217,10 +218,11 @@ public class ContentDirectoryFragment extends ListFragment implements Observer
 			tree = new LinkedList<>(Arrays.asList(savedInstanceState.getStringArray(STATE_TREE)));
 			currentID = savedInstanceState.getString(STATE_CURRENT);
 
+			//从这里获得选中的DMS
 			device = Main.upnpServiceController.getSelectedContentDirectory();
 			contentDirectoryCommand = Main.factory.createContentDirectoryCommand();
 		}
-		//长按设备名字
+		//长按设备或者某个文件
 		getListView().setOnItemLongClickListener( new AdapterView.OnItemLongClickListener() {
 			@Override
 			public boolean onItemLongClick(AdapterView<?> adapterView, View v, int position, long id) {
@@ -429,7 +431,6 @@ public class ContentDirectoryFragment extends ListFragment implements Observer
 
 	public synchronized void refresh()
 	{
-		Log.e(TAG, "refresh()-----1------");
 
 		setEmptyText("refresh..."+getString(R.string.loading));
 
@@ -446,7 +447,7 @@ public class ContentDirectoryFragment extends ListFragment implements Observer
 				}
 			});
 		}
-		Log.e(TAG, "refresh()-----2------");
+		Log.e(TAG, "refresh()-----2--Update search visibility----");
 		// Update search visibility
 		updateSearchVisibility();
 
@@ -461,26 +462,28 @@ public class ContentDirectoryFragment extends ListFragment implements Observer
 				device = null;
 				tree = null;
 			}
-			Log.e(TAG, "refresh()-----3------");
+			//Log.e(TAG, "refresh()-----3------");
 			// Fill with the content directory list 用当前设备的列表来填充
-			Log.e(TAG,"refresh...get dms");
+			Log.e(TAG,"refresh. 3 .TO GET DMS LIST");
+			//主动获取dms列表upnpDevices
 			final Collection<IUpnpDevice> upnpDevices = Main.upnpServiceController.getServiceListener()
 				.getFilteredDeviceList(new CallableContentDirectoryFilter());
 
 			ArrayList<DIDLObjectDisplay> list = new ArrayList<DIDLObjectDisplay>();
 			for (IUpnpDevice upnpDevice : upnpDevices)
 				list.add(new DIDLObjectDisplay(new DIDLDevice(upnpDevice)));
-			Log.e(TAG, "refresh()-----4------");
+			Log.e(TAG, "refresh()-----4--SHOW DMS LIST----");
 			try {
 				ContentCallback cc = new ContentCallback(contentList);
 				cc.setContent(list);
-				Log.e(TAG, "refresh...UI add  dms list");
+				//Log.e(TAG, "refresh...UI add  dms list");
 				cc.call();
 			} catch (Exception e){e.printStackTrace();}
+			Log.e(TAG, "refresh..4 AFTER SHOW UI  dms list ,RETURN ");
 
-			return;
+			return;//退出
 		}
-		Log.e(TAG, "refresh()-----5------");
+		Log.e(TAG, "refresh()-----5---Main.upnpServiceController.getSelectedContentDirectory() NOT NULL---");
 		Log.i(TAG, "device " + device + " device " + ((device != null) ? device.getDisplayString() : ""));
 		Log.i(TAG, "contentDirectoryCommand : " + contentDirectoryCommand);
 
@@ -489,7 +492,7 @@ public class ContentDirectoryFragment extends ListFragment implements Observer
 			Log.e(TAG,"Can't do anything if upnp not ready");
 			return; // Can't do anything if upnp not ready
 		}
-		Log.e(TAG, "refresh()-----6------");
+		Log.e(TAG, "refresh()-----6---UPNP READY--");
 		//设备为空
 		if (device == null || !device.equals(Main.upnpServiceController.getSelectedContentDirectory()))
 		{Log.e(TAG,"device IS NULL ");
@@ -532,6 +535,7 @@ public class ContentDirectoryFragment extends ListFragment implements Observer
 		}
 	}
 
+	//点击选中设备或者是文件
 	@Override
 	public void onListItemClick(ListView l, View v, int position, long id)
 	{
@@ -636,6 +640,167 @@ public class ContentDirectoryFragment extends ListFragment implements Observer
 					refresh();
 				}
 			});
+		}
+	}
+
+
+	public void update(IUpnpDevice device)
+	{
+		this.localdevice=device;
+
+		final Activity a = getActivity();
+		if(a!=null) {
+			a.runOnUiThread(new Runnable() {
+				@Override
+				public void run() {
+					screfresh();
+				}
+			});
+		}
+	}
+	public synchronized void screfresh()
+	{
+		device=this.localdevice;
+		setEmptyText("refresh..."+getString(R.string.loading));
+
+		final Activity a = getActivity();
+		if(a!=null) {
+			a.runOnUiThread(new Runnable() {
+				@Override
+				public void run() {
+					try {
+						mPullToRefreshLayout.setRefreshing(true);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+			});
+		}
+		Log.e(TAG, "refresh()-----2--Update search visibility----");
+		// Update search visibility
+		updateSearchVisibility();
+
+//		if (Main.upnpServiceController.getSelectedContentDirectory() == null)
+//		{
+//			// List here the content directory devices
+//			setEmptyText(getString(R.string.device_list_empty));
+//
+//			if (device != null)
+//			{
+//				Log.i(TAG, "Current content directory have been removed");
+//				device = null;
+//				tree = null;
+//			}
+//			//Log.e(TAG, "refresh()-----3------");
+//			// Fill with the content directory list 用当前设备的列表来填充
+//			Log.e(TAG,"refresh. 3 .TO GET DMS LIST");
+//			//主动获取dms列表upnpDevices
+//			final Collection<IUpnpDevice> upnpDevices = Main.upnpServiceController.getServiceListener()
+//					.getFilteredDeviceList(new CallableContentDirectoryFilter());
+//
+//			ArrayList<DIDLObjectDisplay> list = new ArrayList<DIDLObjectDisplay>();
+//			for (IUpnpDevice upnpDevice : upnpDevices)
+//				list.add(new DIDLObjectDisplay(new DIDLDevice(upnpDevice)));
+//			Log.e(TAG, "refresh()-----4--SHOW DMS LIST----");
+//			try {
+//				ContentCallback cc = new ContentCallback(contentList);
+//				cc.setContent(list);
+//				//Log.e(TAG, "refresh...UI add  dms list");
+//				cc.call();
+//			} catch (Exception e){e.printStackTrace();}
+//			Log.e(TAG, "refresh..4 AFTER SHOW UI  dms list ,RETURN ");
+//
+//			return;//退出
+//		}
+		DIDLObjectDisplay didldevice=new DIDLObjectDisplay(new DIDLDevice(device));
+		IDIDLObject didl = didldevice.getDIDLObject();
+
+		try {
+			if(didl instanceof DIDLDevice) //是设备
+			{
+				Log.e(TAG,"DIDLDevice MYLOCALDECIVE");
+				Main.upnpServiceController.setSelectedContentDirectory( ((DIDLDevice)didl).getDevice(), false );
+
+				// Refresh display
+				//Log.e(TAG,"refresh display");
+				//refresh();
+			}
+//			else if (didl instanceof IDIDLContainer) //是容器
+//			{Log.e(TAG,"IDIDLContainer");
+//				// Update position
+//				if (didl instanceof IDIDLParentContainer)
+//				{
+//					currentID = tree.pop();
+//				}
+//				else
+//				{
+//					currentID = didl.getId();
+//					String parentID = didl.getParentID();
+//					tree.push(parentID);
+//				}
+//
+//				// Refresh display
+//				refresh();
+//			}
+//			else if (didl instanceof IDIDLItem)
+//			{
+//				// Launch item
+//				launchURI((IDIDLItem) didl);
+//			}
+		} catch (Exception e) {
+			Log.e(TAG, "Unable to finish action after item click");
+			e.printStackTrace();
+		}
+
+		Log.e(TAG, "refresh()-----5---Main.upnpServiceController.getSelectedContentDirectory() NOT NULL---");
+		Log.i(TAG, "device " + device + " device " + ((device != null) ? device.getDisplayString() : ""));
+		Log.i(TAG, "contentDirectoryCommand : " + contentDirectoryCommand);
+
+		contentDirectoryCommand = Main.factory.createContentDirectoryCommand();
+		if (contentDirectoryCommand == null) {
+			Log.e(TAG,"Can't do anything if upnp not ready");
+			return; // Can't do anything if upnp not ready
+		}
+		Log.e(TAG, "refresh()-----6---UPNP READY--");
+		//设备为空
+		if (device == null || !device.equals(Main.upnpServiceController.getSelectedContentDirectory()))
+		{Log.e(TAG,"device IS NULL ");
+			device = Main.upnpServiceController.getSelectedContentDirectory();
+
+			Log.e(TAG, "Content directory changed !!! "
+					+ Main.upnpServiceController.getSelectedContentDirectory().getDisplayString());
+
+			tree = new LinkedList<String>();
+
+			Log.e(TAG, "Browse root of a new device");
+			String rootid="0";
+			//用dm的contentDirectoryCommand功能执行的遍历啊
+			//contentDirectoryCommand.browse(rootid, null, new ContentCallback(contentList));
+			//ADD 直接all music了
+			String mCurrentID="2$0";String mParentID="0";
+			contentDirectoryCommand.browse(mCurrentID, mParentID, new ContentCallback(contentList));
+		}
+		else
+		{ Log.e(TAG,"device NOT NULL ");
+
+			if (tree != null && tree.size() > 0)
+			{
+				String parentID = (tree.size() > 0) ? tree.getLast() : null;
+				//这里很关键，根据这俩来搜寻的
+				Log.e(TAG, "Browse, currentID : " + currentID + ", parentID : " + parentID);
+				//直接all music了
+				currentID="2$0";parentID="0";
+				contentDirectoryCommand.browse(currentID, parentID, new ContentCallback(contentList));
+			}
+			else
+			{
+				Log.i(TAG, "Browse root");
+//				String rootid="0";
+//				contentDirectoryCommand.browse(rootid, null, new ContentCallback(contentList));
+				//ADD 直接all music了
+				String mCurrentID="2$0";String mParentID="0";
+				contentDirectoryCommand.browse(mCurrentID, mParentID, new ContentCallback(contentList));
+			}
 		}
 	}
 }

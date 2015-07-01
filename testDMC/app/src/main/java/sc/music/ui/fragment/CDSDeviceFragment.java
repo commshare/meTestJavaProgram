@@ -80,6 +80,7 @@ public class CDSDeviceFragment extends UpnpDeviceListFragment implements Observe
         select(device, false);
     }
 
+    //在UI中选中啊
     @Override
     protected void select(IUpnpDevice device, boolean force)
     {
