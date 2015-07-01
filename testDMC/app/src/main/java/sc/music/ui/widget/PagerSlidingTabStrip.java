@@ -198,7 +198,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
         tabsContainer.removeAllViews();
 
         tabCount = pager.getAdapter().getCount();
-        Log.e("zb","get count"+tabCount);
+       // Log.e("zb","get count"+tabCount);
 
         for (int i = 0; i < tabCount; i++) {
 
@@ -289,7 +289,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
     }
 
     private void scrollToChild(int position, int offset) {
-        Log.e("zb", "tabCount" + tabCount);
+      //  Log.e("zb", "tabCount" + tabCount);
         if (tabCount == 0) {
             return;
         }
@@ -357,7 +357,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-            Log.e("zb","position"+position);
+          //  Log.e("zb","position"+position);
             currentPosition = position;
             currentPositionOffset = positionOffset;
 

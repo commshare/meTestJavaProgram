@@ -126,7 +126,6 @@ public class ContentDirectoryService extends AbstractContentDirectoryService/*cl
 
             // Video
             Container videoContainer = null, allVideoContainer = null;
-            //读取配置
             if(sharedPref.getBoolean(Settings.CONTENTDIRECTORY_VIDEO, true))
             {
                 videoContainer = new CustomContainer( "" + VIDEO_ID, "" + ROOT_ID,
@@ -140,7 +139,7 @@ public class ContentDirectoryService extends AbstractContentDirectoryService/*cl
                 videoContainer.setChildCount(videoContainer.getChildCount()+1);
             }
 
-            // Audio 构造audioContainer
+            // Audio 构造audioContainer 这个一定要加入，这个会读取数据库
             Container audioContainer = null, artistAudioContainer = null, albumAudioContainer = null,
                     allAudioContainer = null;
             if(sharedPref.getBoolean(Settings.CONTENTDIRECTORY_AUDIO, true))
@@ -149,7 +148,7 @@ public class ContentDirectoryService extends AbstractContentDirectoryService/*cl
                         AUDIO_TXT, ctx.getString(R.string.app_name), baseURL);
                 rootContainer.addContainer(audioContainer);
                 rootContainer.setChildCount(rootContainer.getChildCount()+1);
-//
+
 //                artistAudioContainer = new ArtistContainer( "" + ARTIST_ID, "" + AUDIO_ID,
 //                        "Artist", ctx.getString(R.string.app_name), baseURL, ctx);
 //                audioContainer.addContainer(artistAudioContainer);
@@ -159,12 +158,11 @@ public class ContentDirectoryService extends AbstractContentDirectoryService/*cl
 //                        "Album", ctx.getString(R.string.app_name), baseURL, ctx, null);
 //                audioContainer.addContainer(albumAudioContainer);
 //                audioContainer.setChildCount(audioContainer.getChildCount()+1);
-//
+
                 allAudioContainer = new AudioContainer("" + ALL_ID, "" + AUDIO_ID,
                         "All", ctx.getString(R.string.app_name), baseURL, ctx, null, null);
                 audioContainer.addContainer(allAudioContainer);
                 audioContainer.setChildCount(audioContainer.getChildCount()+1);
-
             }
 
             // Image
