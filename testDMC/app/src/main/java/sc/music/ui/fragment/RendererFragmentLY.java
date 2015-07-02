@@ -19,38 +19,36 @@
 
 package sc.music.ui.fragment;
 
-
-
-		import android.app.Activity;
-		import android.app.Fragment;
-		import android.graphics.Color;
-		import android.os.Bundle;
-		import android.os.Handler;
-		import android.util.Log;
-		import android.view.LayoutInflater;
-		import android.view.View;
-		import android.view.View.OnClickListener;
-		import android.view.ViewGroup;
-		import android.widget.ImageView;
-		import android.widget.SeekBar;
-		import android.widget.SeekBar.OnSeekBarChangeListener;
-		import android.widget.TextView;
-		import android.widget.Toast;
+import android.app.Activity;
+import android.app.Fragment;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.SeekBar;
+import android.widget.SeekBar.OnSeekBarChangeListener;
+import android.widget.TextView;
+import android.widget.Toast;
 
 
 
-		import java.util.Observable;
-		import java.util.Observer;
-		import java.util.concurrent.Callable;
+import java.util.Observable;
+import java.util.Observer;
+import java.util.concurrent.Callable;
 
-		import sc.droid.dmc.R;
-		import sc.music.Main;
-		import sc.music.upnp.cling.RendererState;
-		import sc.music.upnp.model.ARendererState;
-		import sc.music.upnp.model.IRendererCommand;
-		import sc.music.upnp.model.IUpnpDevice;
+import sc.droid.dmc.R;
+import sc.music.Main;
+import sc.music.upnp.cling.RendererState;
+import sc.music.upnp.model.ARendererState;
+import sc.music.upnp.model.IRendererCommand;
+import sc.music.upnp.model.IUpnpDevice;
 
-public class RendererFragment extends Fragment implements Observer
+public class RendererFragmentLY extends Fragment implements Observer
 {
 	private static final String TAG = "RendererFragment";
 
@@ -70,7 +68,7 @@ public class RendererFragment extends Fragment implements Observer
 	TextView duration;
 	boolean durationRemaining;
 
-	public RendererFragment()
+	public RendererFragmentLY()
 	{
 		super();
 		durationRemaining = true;
@@ -149,12 +147,13 @@ public class RendererFragment extends Fragment implements Observer
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	{
-		return inflater.inflate(R.layout.renderer_fragment, container, false);
+		//这是直接加载一个布局文件名字
+		return inflater.inflate(R.layout.renderer_fragment_ly, container, false);
 	}
 
 	public void startControlPoint()
 	{
-		if (Main.upnpServiceController.getSelectedRenderer() == null)
+		if (Main.upnpServiceController.getSelectedRenderer() == null)//没有选中dmr设备
 		{
 			if (device != null)
 			{
@@ -219,12 +218,13 @@ public class RendererFragment extends Fragment implements Observer
 				public void run()
 				{
 					try {
+						//在这里显示
 						show();
 
-						TextView title = (TextView) a.findViewById(R.id.title);
-						TextView artist = (TextView) a.findViewById(R.id.subtitle);
+						TextView title = (TextView) a.findViewById(R.id.title_mini);
+						TextView artist = (TextView) a.findViewById(R.id.artist_mini);
 						SeekBar seek = (SeekBar) a.findViewById(R.id.progressBar);
-						SeekBar volume = (SeekBar) a.findViewById(R.id.volume);
+						SeekBar volume = (SeekBar) a.findViewById(R.id.volume_mini);
 						TextView durationElapse = (TextView) a.findViewById(R.id.trackDurationElapse);
 
 						if (title == null || artist == null || seek == null || duration == null || durationElapse == null)
@@ -285,10 +285,13 @@ public class RendererFragment extends Fragment implements Observer
 		play_pauseButton = (ImageView) getActivity().findViewById(R.id.play_pauseButton);
 		volumeButton = (ImageView) getActivity().findViewById(R.id.volumeIcon);
 		stopButton = (ImageView) getActivity().findViewById(R.id.stopButton);
-		progressBar = (SeekBar) getActivity().findViewById(R.id.progressBar);
-		volume = (SeekBar) getActivity().findViewById(R.id.volume);
-		volume.setVisibility(View.INVISIBLE);
+		progressBar = (SeekBar) getActivity().findViewById(R.id.playback_seekbar_mini);
+		volume = (SeekBar) getActivity().findViewById(R.id.volume_mini);
+		//HIDE volumeButton
 		volumeButton.setVisibility(View.INVISIBLE);
+		//to hide volume seekbar
+		volume.setVisibility(View.INVISIBLE);
+
 	}
 
 	public abstract class ButtonCallback implements Callable<Void>

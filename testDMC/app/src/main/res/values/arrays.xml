@@ -5,7 +5,7 @@
     <string-array name="pager_title">
         <item>本地音乐</item>
         <item>播放列表</item>
-        <item>网络音乐</item>
+
         <item>DMR设备</item>
     </string-array>
 
