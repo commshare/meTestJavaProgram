@@ -147,12 +147,13 @@ public class RendererFragment extends Fragment implements Observer
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	{
-		return inflater.inflate(R.layout.renderer_fragment, container, false);
+		//这是直接加载一个布局文件名字
+		return inflater.inflate(R.layout.renderer_fragment_ly, container, false);
 	}
 
 	public void startControlPoint()
 	{
-		if (Main.upnpServiceController.getSelectedRenderer() == null)
+		if (Main.upnpServiceController.getSelectedRenderer() == null)//没有选中dmr设备
 		{
 			if (device != null)
 			{
@@ -220,10 +221,10 @@ public class RendererFragment extends Fragment implements Observer
 						//在这里显示
 						show();
 
-						TextView title = (TextView) a.findViewById(R.id.title);
-						TextView artist = (TextView) a.findViewById(R.id.subtitle);
+						TextView title = (TextView) a.findViewById(R.id.title_mini);
+						TextView artist = (TextView) a.findViewById(R.id.artist_mini);
 						SeekBar seek = (SeekBar) a.findViewById(R.id.progressBar);
-						SeekBar volume = (SeekBar) a.findViewById(R.id.volume);
+						SeekBar volume = (SeekBar) a.findViewById(R.id.volume_mini);
 						TextView durationElapse = (TextView) a.findViewById(R.id.trackDurationElapse);
 
 						if (title == null || artist == null || seek == null || duration == null || durationElapse == null)
@@ -284,8 +285,13 @@ public class RendererFragment extends Fragment implements Observer
 		play_pauseButton = (ImageView) getActivity().findViewById(R.id.play_pauseButton);
 		volumeButton = (ImageView) getActivity().findViewById(R.id.volumeIcon);
 		stopButton = (ImageView) getActivity().findViewById(R.id.stopButton);
-		progressBar = (SeekBar) getActivity().findViewById(R.id.progressBar);
-		volume = (SeekBar) getActivity().findViewById(R.id.volume);
+		progressBar = (SeekBar) getActivity().findViewById(R.id.playback_seekbar_mini);
+		volume = (SeekBar) getActivity().findViewById(R.id.volume_mini);
+		//HIDE volumeButton
+		volumeButton.setVisibility(View.INVISIBLE);
+		//to hide volume seekbar
+		volume.setVisibility(View.INVISIBLE);
+
 	}
 
 	public abstract class ButtonCallback implements Callable<Void>

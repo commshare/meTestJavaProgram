@@ -22,7 +22,22 @@
 	android:layout_height="match_parent"
 	android:orientation="vertical"
 	style="@style/renderer" >
+	<View
+		android:id="@+id/separator"
+		android:layout_width="fill_parent"
+		android:layout_height="5dp"
+		android:layout_marginBottom="117dp"
+		android:background="@color/greyer"
+		android:layout_gravity="bottom" />
 
+	<SeekBar
+		android:id="@+id/progressBar"
+		android:layout_width="fill_parent"
+		android:layout_height="35dp"
+		android:paddingLeft="-3dp"
+		android:paddingRight="-3dp"
+		android:layout_marginBottom="100dp"
+		android:layout_gravity="bottom" />
 	<TextView
 		android:id="@+id/trackDurationElapse"
 		android:layout_width="wrap_content"
