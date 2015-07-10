@@ -15,6 +15,7 @@ import java.util.concurrent.Callable;
 
 import sc.droid.dmc.R;
 import sc.music.Main;
+import sc.music.Render.LocalDMR;
 import sc.music.upnp.cling.CallableRendererFilter;
 import sc.music.upnp.model.IUpnpDevice;
 
@@ -27,10 +28,14 @@ public class RendererDialog extends DialogFragment {
 	{
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
+		//是通过这么复杂的一个过程获取到DMR设备的
 		final Collection<IUpnpDevice> upnpDevices = Main.upnpServiceController.getServiceListener()
 				.getFilteredDeviceList(new CallableRendererFilter());
 
 		ArrayList<DeviceDisplay> list = new ArrayList<DeviceDisplay>();
+		//创建一个类，叫做LocalDMR，可用来构造DeviceDisplay
+		LocalDMR mydmr=new LocalDMR();
+		list.add(new DeviceDisplay(mydmr));
 		for (IUpnpDevice upnpDevice : upnpDevices)
 			list.add(new DeviceDisplay(upnpDevice));
 
@@ -38,7 +43,7 @@ public class RendererDialog extends DialogFragment {
 
 		if(list.size()==0)
 		{
-			builder.setTitle(R.string.selectRenderer)
+			builder.setTitle(R.string.select_a_dmr)
 				.setMessage(R.string.noRenderer)
 				.setPositiveButton(R.string.OK, new DialogInterface.OnClickListener() {
 					@Override

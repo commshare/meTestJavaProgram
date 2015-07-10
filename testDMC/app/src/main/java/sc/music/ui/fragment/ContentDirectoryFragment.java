@@ -600,7 +600,8 @@ public class ContentDirectoryFragment extends ListFragment implements Observer
 
 	private void launchURI(final IDIDLItem uri)
 	{
-		if (Main.upnpServiceController.getSelectedRenderer() == null)
+	//	if (Main.upnpServiceController.getSelectedRenderer() == null)
+        if(true)
 		{
 			// No renderer selected yet, open a popup to select one
 			final Activity a = getActivity();
