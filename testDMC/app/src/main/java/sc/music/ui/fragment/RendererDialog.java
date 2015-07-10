@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ArrayAdapter;
 
 
@@ -21,6 +22,7 @@ import sc.music.upnp.model.IUpnpDevice;
 
 public class RendererDialog extends DialogFragment {
 
+	private static String TAG="RenderDialog";
 	private Callable<Void> callback = null;
 
 	@Override
@@ -35,12 +37,13 @@ public class RendererDialog extends DialogFragment {
 		ArrayList<DeviceDisplay> list = new ArrayList<DeviceDisplay>();
 		//创建一个类，叫做LocalDMR，可用来构造DeviceDisplay
 		LocalDMR mydmr=new LocalDMR();
+		//首先加入我自己的本地设备
 		list.add(new DeviceDisplay(mydmr));
 		for (IUpnpDevice upnpDevice : upnpDevices)
 			list.add(new DeviceDisplay(upnpDevice));
 
 		final DialogFragment dialog = this;
-
+		Log.e(TAG,"DMR list size ["+list.size()+"]");
 		if(list.size()==0)
 		{
 			builder.setTitle(R.string.select_a_dmr)
@@ -57,10 +60,17 @@ public class RendererDialog extends DialogFragment {
 		{
 			ArrayAdapter<DeviceDisplay> rendererList = new ArrayAdapter<DeviceDisplay>(getActivity(),
 				android.R.layout.simple_list_item_1, list);
-			builder.setTitle(R.string.selectRenderer).setAdapter(rendererList, new DialogInterface.OnClickListener() {
+			builder.setTitle(R.string.select_a_dmr).setAdapter(rendererList, new DialogInterface.OnClickListener() {
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
-					Main.upnpServiceController.setSelectedRenderer((IUpnpDevice) upnpDevices.toArray()[which]);
+					if(which ==0 ){
+						Log.e(TAG,"LocalDMR");
+					}
+					else {
+						int newWhich=which-1;
+						//还是要传递给给dmc啊，还是信任自己拿到的upnpDevices啊
+						Main.upnpServiceController.setSelectedRenderer((IUpnpDevice) upnpDevices.toArray()[newWhich]);
+					}
 					try {
 						if (callback != null)
 							callback.call();
