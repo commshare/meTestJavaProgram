@@ -72,7 +72,7 @@ public class RenderDeviceFragment  extends  UpnpDeviceListFragment implements Ob
     @Override
     protected void select(IUpnpDevice device, boolean force)
     {
-        //选中一个dmr
+        //告诉dmc，有设备被选中了
         Main.upnpServiceController.setSelectedRenderer(device, force);
     }
 
@@ -93,6 +93,7 @@ public class RenderDeviceFragment  extends  UpnpDeviceListFragment implements Ob
         }
         else{
             int newpos=position-1;
+            //发送这个被选中的设备
             select(list.getItem(newpos).getDevice());
             Log.d(TAG, "Set renderer to " + list.getItem(newpos));
         }

@@ -244,14 +244,22 @@ public class ContentDirectoryFragment extends ListFragment implements Observer
 					final Activity a = getActivity();
 					final Intent intent = new Intent(Intent.ACTION_VIEW);
 
+                    /*07-10 15:10:28.822: D/ClingDIDLItem(6862):
+                    Item : http://172.16.34.206:8192/a-8068.mp3
+                    * */
 					Uri uri = Uri.parse(ididlItem.getURI());
 					intent.setDataAndType(uri, didl.getDataType());
+                    /*
+                    07-10 15:13:21.592: E/ContentDirectoryFragment(7348): Uri path[/a-8068.mp3] type [audio/*]
+                    * */
+                    Log.e(TAG,"Uri path["+uri.getPath()+"] type ["+didl.getDataType()+"]");
 
-					try {
-						a.startActivity(intent);
-					} catch (ActivityNotFoundException ex) {
-						Toast.makeText(getActivity(), R.string.failed_action, Toast.LENGTH_SHORT).show();
-					}
+                    //就暂时不启动其他应用来处理了吧
+//					try {
+//						a.startActivity(intent);
+//					} catch (ActivityNotFoundException ex) {
+//						Toast.makeText(getActivity(), R.string.failed_action, Toast.LENGTH_SHORT).show();
+//					}
 				}
 				else
 				{
