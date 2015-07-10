@@ -80,9 +80,23 @@ public class RenderDeviceFragment  extends  UpnpDeviceListFragment implements Ob
     @Override
     public void onListItemClick(ListView l, View v, int position, long id)
     {
-        super.onListItemClick(l, v, position, id);
-        select(list.getItem(position).getDevice());
-        Log.d(TAG, "Set renderer to " + list.getItem(position));
+        //position 是对的，但是0对应的不是list的0
+        //Log.e(TAG,"select dmr position["+position+"]");
+        ListView listView=getListView();
+        // TODO 修正有Header的ListView的position的BUG
+        int headerViewsCount = listView.getHeaderViewsCount();//得到header的总数量
+        Log.e(TAG, "select dmr position[" + position + "]  headerViewsCount[" + headerViewsCount + "]");
+        //super.onListItemClick(l, v, position, id);
+        if(position == 0 )//local dmr
+        {
+            Log.e(TAG, "local dmr");
+        }
+        else{
+            int newpos=position-1;
+            select(list.getItem(newpos).getDevice());
+            Log.d(TAG, "Set renderer to " + list.getItem(newpos));
+        }
+
     }
 
     @Override
