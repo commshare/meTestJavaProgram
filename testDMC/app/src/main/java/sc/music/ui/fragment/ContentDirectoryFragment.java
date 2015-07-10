@@ -70,7 +70,7 @@ public class ContentDirectoryFragment extends ListFragment implements Observer
 {
 	private static final String TAG = "ContentDirectoryFragment";
 
-	private ArrayAdapter<DIDLObjectDisplay> contentList;
+	private ArrayAdapter<DIDLObjectDisplay> contentList/*实际上是一个adatper啊*/;
 	private LinkedList<String> tree = null;
 	private String currentID = null;
 	private IUpnpDevice device;
@@ -150,12 +150,13 @@ public class ContentDirectoryFragment extends ListFragment implements Observer
 	//这个adapter是显示dms的cds的
 	public class CustomAdapter extends ArrayAdapter<DIDLObjectDisplay>
 	{
-		private final int layout;
+		private final int layout; //每个item的布局。
 		private LayoutInflater inflater;
 
 		public CustomAdapter(Context context) {
 			super(context, 0);
 			this.inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            //每个item的布局
 			this.layout = R.layout.browsing_list_item;
 		}
 
@@ -163,20 +164,24 @@ public class ContentDirectoryFragment extends ListFragment implements Observer
 		public View getView(int position, View convertView, ViewGroup parent)
 		{
 			if (convertView == null)
-				convertView = inflater.inflate(layout, null);
+				convertView = inflater.inflate(layout, null);//从item的布局变成item的view
 
 			// Item
 			final DIDLObjectDisplay entry = getItem(position);
-
+            //根据item的didl信息来填充这些UI
+            //icon
 			ImageView imageView = (ImageView) convertView.findViewById(R.id.icon);
 			imageView.setImageResource(entry.getIcon());
 
+            //title
 			TextView text1 = (TextView) convertView.findViewById(R.id.text1);
 			text1.setText(entry.getTitle());
 
+            //描述
 			TextView text2 = (TextView) convertView.findViewById(R.id.text2);
 			text2.setText((entry.getDescription()!=null) ? entry.getDescription() : "");
 
+            //count是什么？
 			TextView text3 = (TextView) convertView.findViewById(R.id.text3);
 			text3.setText(entry.getCount());
 
@@ -189,10 +194,13 @@ public class ContentDirectoryFragment extends ListFragment implements Observer
 	{
 		super.onActivityCreated(savedInstanceState);
 
+        //content是getView返回的？？？？
 		contentList = new CustomAdapter(this.getView().getContext());
 
+        //这是ListFragment的方法啊，设置contentList实际上是一个ArrayAdapter
 		setListAdapter(contentList);
 
+        //==========开始搜寻DMS
 		//创建了这个设备观察者
 		deviceObserver = new DeviceObserver(this);
 		//dms的设备观察者加入到“内容目录服务设备发现”观察者列表中了。
@@ -393,7 +401,7 @@ public class ContentDirectoryFragment extends ListFragment implements Observer
 		public ContentCallback(ArrayAdapter<DIDLObjectDisplay> contentList)
 		{
 			this.contentList = contentList;
-			this.content = new ArrayList<>();
+			this.content = new ArrayList<>();//这是个list
 		}
 
 		public void setContent(ArrayList<DIDLObjectDisplay> content)
@@ -571,7 +579,7 @@ public class ContentDirectoryFragment extends ListFragment implements Observer
 				// Refresh display
 				refresh();
 			}
-			else if (didl instanceof IDIDLItem)
+			else if (didl instanceof IDIDLItem) //是文件了吧
 			{
 				// Launch item
 				launchURI((IDIDLItem) didl);
@@ -588,6 +596,7 @@ public class ContentDirectoryFragment extends ListFragment implements Observer
 		{
 			// No renderer selected yet, open a popup to select one
 			final Activity a = getActivity();
+			//创建一个线程，处理播放url的问
 			if(a!=null) {
 				a.runOnUiThread(new Runnable(){
 					@Override
@@ -597,6 +606,7 @@ public class ContentDirectoryFragment extends ListFragment implements Observer
 							rendererDialog.setCallback(new Callable<Void>() {
 								@Override
 								public Void call() throws Exception {
+									//把uri传递给dmr
 									launchURIRenderer(uri);
 									return null;
 								}
@@ -643,7 +653,7 @@ public class ContentDirectoryFragment extends ListFragment implements Observer
 		}
 	}
 
-
+//这是我自己新加入的
 	public void update(IUpnpDevice device)
 	{
 		this.localdevice=device;
@@ -658,6 +668,7 @@ public class ContentDirectoryFragment extends ListFragment implements Observer
 			});
 		}
 	}
+    //这是我自己新加入的
 	public synchronized void screfresh()
 	{
 		device=this.localdevice;

@@ -31,17 +31,19 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import sc.droid.dmc.R;
 import sc.music.upnp.model.IDeviceDiscoveryObserver;
 import sc.music.upnp.model.IUpnpDevice;
 
 
+//原来设备列表用的是这个专门的父类啊
 public abstract class UpnpDeviceListFragment extends ListFragment implements IDeviceDiscoveryObserver {
 
 	protected static final String TAG = "UpnpDeviceListFragment";
 
-	protected ArrayAdapter<DeviceDisplay> list;
+	protected ArrayAdapter<DeviceDisplay> list/*实际上是一个Adapter啊*/;
 
 	private final boolean extendedInformation;
 
@@ -59,13 +61,20 @@ public abstract class UpnpDeviceListFragment extends ListFragment implements IDe
 	public void onActivityCreated(Bundle savedInstanceState)
 	{
 		super.onActivityCreated(savedInstanceState);
+		//获取listview
+		ListView listView=getListView();
+		//用LayoutInflater.from的方式获取inflater
+		View header =LayoutInflater.from(getActivity()).inflate(R.layout.device_header_item, null);
+		listView.addHeaderView(header,null,true);
+		TextView mydevice=(TextView)header.findViewById(R.id.device_header_name);
+		mydevice.setText(R.string.local_dmr);
 		list = new ArrayAdapter<>(this.getView().getContext(), R.layout.device_list_item);
 		setListAdapter(list);
 
 		Log.d(TAG, "Activity created");
 	}
 
-	@Override
+	@Override //这才是view啊
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	{
 		// Inflate the layout for this fragment
