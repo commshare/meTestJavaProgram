@@ -89,7 +89,7 @@ public class TrackMetadata {
 		}
 	}
 
-	//返回的是一个xml
+	//这是在构造一个XML格式的字符串返回以控制DMR用啊
 	public String getXML()
 	{
 		XmlSerializer s = Xml.newSerializer();

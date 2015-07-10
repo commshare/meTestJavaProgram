@@ -72,6 +72,7 @@ public class RendererDialog extends DialogFragment {
 						Main.upnpServiceController.setSelectedRenderer((IUpnpDevice) upnpDevices.toArray()[newWhich]);
 					}
 					try {
+						//执行调用者的callback函数
 						if (callback != null)
 							callback.call();
 					} catch (Exception e) {

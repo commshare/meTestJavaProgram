@@ -66,11 +66,13 @@ public class RendererCommand implements Runnable, IRendererCommand {
 	public Thread thread;
 	boolean pause = false;
 
+	//传入的cling的控制点啊
 	public RendererCommand(ControlPoint controlPoint, RendererState rendererState)
 	{
 		this.rendererState = rendererState;
 		this.controlPoint = controlPoint;
 
+		//并且还创建了一个线程
 		thread = new Thread(this);
 		pause = true;
 	}
@@ -344,6 +346,13 @@ public class RendererCommand implements Runnable, IRendererCommand {
 
 			public void callback()
 			{
+				//原来在这里，使用这俩来给播放器播放
+				/* 果然是全路径的
+				07-10 17:20:26.782: E/RendererCommand(24220):
+				 item.getURI()http://172.16.34.206:8192/a-8070.mp3]
+
+				* */
+				Log.e(TAG,"item.getURI()"+item.getURI()+"]");
 				setURI(item.getURI(), trackMetadata);
 			}
 		});

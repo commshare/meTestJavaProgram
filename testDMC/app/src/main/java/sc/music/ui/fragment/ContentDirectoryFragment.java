@@ -601,6 +601,7 @@ public class ContentDirectoryFragment extends ListFragment implements Observer
 	private void launchURI(final IDIDLItem uri)
 	{
 	//	if (Main.upnpServiceController.getSelectedRenderer() == null)
+        //每次都弹出
         if(true)
 		{
 			// No renderer selected yet, open a popup to select one
@@ -636,11 +637,12 @@ public class ContentDirectoryFragment extends ListFragment implements Observer
 
 	}
 
+    //居然在这里控制dmr
 	private void launchURIRenderer(IDIDLItem uri)
 	{
 		IRendererCommand rendererCommand = Main.factory.createRendererCommand(Main.factory.createRendererState());
 		rendererCommand.launchItem(uri);
-	}
+}
 
 	@Override
 	public void update(Observable observable, Object data)
