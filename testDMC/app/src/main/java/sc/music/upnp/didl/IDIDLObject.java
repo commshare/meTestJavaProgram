@@ -34,5 +34,7 @@ public interface IDIDLObject {
 	public String getParentID();
 
 	public String getId();
+	//added by me 20150721
+	public String getLocalpath();
 
 }

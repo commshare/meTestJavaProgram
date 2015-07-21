@@ -43,7 +43,7 @@ public class MediaServer extends fi.iki.elonen.SimpleWebServer{
     private LocalService localService = null;//cling库的cling.model.meta.LocalService;
     private Context ctx = null;
 
-    private final static int port = 8192;
+    private final static int port = 9192;
     private static InetAddress localAddress;//java的网络库
     public MediaServer(String host, int port, File wwwroot, boolean quiet) {
         super(host, port, wwwroot, quiet);
@@ -69,6 +69,7 @@ public class MediaServer extends fi.iki.elonen.SimpleWebServer{
         //内容目录服务
         ContentDirectoryService contentDirectoryService = (ContentDirectoryService)localService.getManager().getImplementation();
         contentDirectoryService.setContext(ctx);
+        //baseURL在这里
         contentDirectoryService.setBaseURL(getAddress());
     }
     public String getAddress() {
@@ -135,7 +136,7 @@ public class MediaServer extends fi.iki.elonen.SimpleWebServer{
         public String path;
         public String mime;
     }
-    //文件server对象
+    //这是创建一个文件服务对象
     private ServerObject getFileServerObject(String id) throws InvalidIdentificatorException
     {
         try
@@ -188,7 +189,7 @@ public class MediaServer extends fi.iki.elonen.SimpleWebServer{
                 }
                 cursor.close();
 
-                if(path!=null)
+                if(path!=null) //有path的啊
                     return new ServerObject(path, mime);
             }
         }
@@ -222,8 +223,8 @@ public class MediaServer extends fi.iki.elonen.SimpleWebServer{
             try
             {
                 ServerObject obj = getFileServerObject(uri);
-
-                Log.i(TAG, "Will serve " + obj.path);
+                //这个时候，文件路径还在的
+                Log.e(TAG, "Will serve path[ " + obj.path+"]");
                 res = serveFile(new File(obj.path), obj.mime, header);
             }
             catch(InvalidIdentificatorException e)

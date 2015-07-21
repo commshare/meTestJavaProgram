@@ -166,7 +166,7 @@ public class ContentDirectoryFragment extends ListFragment implements Observer
 			if (convertView == null)
 				convertView = inflater.inflate(layout, null);//从item的布局变成item的view
 
-			// Item
+			// DIDLObjectDisplay是怎么来的呢？
 			final DIDLObjectDisplay entry = getItem(position);
             //根据item的didl信息来填充这些UI
             //icon
@@ -252,6 +252,7 @@ public class ContentDirectoryFragment extends ListFragment implements Observer
                     /*
                     07-10 15:13:21.592: E/ContentDirectoryFragment(7348): Uri path[/a-8068.mp3] type [audio/*]
                     * */
+					//IDIDLItem只需要返回一个uri
                     Log.e(TAG,"Uri path["+uri.getPath()+"] type ["+didl.getDataType()+"]");
 
                     //就暂时不启动其他应用来处理了吧
@@ -401,6 +402,7 @@ public class ContentDirectoryFragment extends ListFragment implements Observer
 		}
 	}
 
+	//自动刷新
 	public class ContentCallback extends RefreshCallback
 	{
 		private ArrayAdapter<DIDLObjectDisplay> contentList;

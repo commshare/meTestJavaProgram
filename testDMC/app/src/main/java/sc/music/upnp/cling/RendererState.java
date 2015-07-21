@@ -232,12 +232,14 @@ public class RendererState extends ARendererState {
 		return positionInfo.getElapsedPercent();
 	}
 
+	//获取title
 	@Override
 	public String getTitle()
 	{
 		return getTrackMetadata().title;
 	}
 
+	//获取artist
 	@Override
 	public String getArtist()
 	{

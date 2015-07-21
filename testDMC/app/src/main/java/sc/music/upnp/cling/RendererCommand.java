@@ -282,16 +282,14 @@ public class RendererCommand implements Runnable, IRendererCommand {
 		controlPoint.execute(new SetAVTransportURI(getAVTransportService(), uri, trackMetadata.getXML()) {
 
 			@Override
-			public void success(ActionInvocation invocation)
-			{
+			public void success(ActionInvocation invocation) {
 				super.success(invocation);
 				Log.i(TAG, "URI successfully set !");
 				commandPlay();
 			}
 
 			@Override
-			public void failure(ActionInvocation arg0, UpnpResponse arg1, String arg2)
-			{
+			public void failure(ActionInvocation arg0, UpnpResponse arg1, String arg2) {
 				Log.w(TAG, "Fail to set URI ! " + arg2);
 			}
 		});
@@ -309,6 +307,7 @@ public class RendererCommand implements Runnable, IRendererCommand {
 
 		Item upnpItem = (Item) obj;
 
+
 		String type = "";
 		if (upnpItem instanceof AudioItem)
 			type = "audioItem";
@@ -321,7 +320,15 @@ public class RendererCommand implements Runnable, IRendererCommand {
 		else if (upnpItem instanceof TextItem)
 			type = "textItem";
 
-		// TODO genre && artURI
+		if(type.equals("audioItem"))
+		{
+			Log.e(TAG,"audioItem ,check localpath");
+
+		}
+		else
+			Log.e(TAG,"NOT audioItem");
+		// TODO genre && artURI  专辑图片还不支持啊
+		//通过upnpitem构造一个TrackMetadata出来，传递信息都来自item
 		final TrackMetadata trackMetadata = new TrackMetadata(upnpItem.getId(), upnpItem.getTitle(),
 				upnpItem.getCreator(), "", "", upnpItem.getFirstResource().getValue(),
 				"object.item." + type);
@@ -350,7 +357,7 @@ public class RendererCommand implements Runnable, IRendererCommand {
 				/* 果然是全路径的
 				07-10 17:20:26.782: E/RendererCommand(24220):
 				 item.getURI()http://172.16.34.206:8192/a-8070.mp3]
-
+				这个URL是http的啊
 				* */
 				Log.e(TAG,"item.getURI()"+item.getURI()+"]");
 				setURI(item.getURI(), trackMetadata);

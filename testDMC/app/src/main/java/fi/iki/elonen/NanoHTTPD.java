@@ -496,6 +496,7 @@ public abstract class NanoHTTPD {
             this(Status.OK, MIME_HTML, msg);
         }
 
+        //simple web server 用的是这个最基本的构造函数？
         /**
          * Basic constructor.
          */

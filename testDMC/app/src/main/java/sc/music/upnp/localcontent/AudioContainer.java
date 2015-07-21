@@ -94,6 +94,7 @@ public class AudioContainer extends DynamicContainer
 					String id = ContentDirectoryService.AUDIO_PREFIX + cursor.getInt(cursor.getColumnIndex(MediaStore.Audio.Media._ID));
 					String title = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.TITLE));
 					String creator = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.ARTIST));
+					//文件路径
 					String filePath = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.DATA));
 					String mimeType = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.MIME_TYPE));
 					long size = cursor.getLong(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.SIZE));
@@ -103,8 +104,14 @@ public class AudioContainer extends DynamicContainer
 					String extension = "";
 					int dot = filePath.lastIndexOf('.');
 					if (dot >= 0)
-						extension = filePath.substring(dot).toLowerCase();
-
+						extension = filePath.substring(dot).toLowerCase();//这是取出扩展名啊
+					Log.e(TAG,"filePath ["+filePath+"]  extension ["+extension + "]");
+					//悲剧了，这是cling的res啊
+					/*
+					    public Res(MimeType httpGetMimeType, Long size, String value) {
+        this(new ProtocolInfo(httpGetMimeType), size, value);
+    }
+					* */
 					Res res = new Res(new MimeType(mimeType.substring(0, mimeType.indexOf('/')),
 						mimeType.substring(mimeType.indexOf('/') + 1)), size, "http://" + baseURL + "/" + id + extension);
 
@@ -112,7 +119,8 @@ public class AudioContainer extends DynamicContainer
 						+ (duration % (1000 * 60 * 60)) / (1000 * 60) + ":"
 						+ (duration % (1000 * 60)) / 1000);
 
-					addItem(new MusicTrack(id, parentID, title, creator, album, new PersonWithRole(creator, "Performer"), res));
+					//这也是cling的adItem啊,res是个可变长度的数组
+					addItem(new SCMusicTrack(id, parentID,filePath, title, creator, album, new PersonWithRole(creator, "Performer"), res));
 
 					Log.v(TAG, "Added audio item " + title + " from " + filePath);
 

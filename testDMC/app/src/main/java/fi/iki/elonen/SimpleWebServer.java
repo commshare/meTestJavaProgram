@@ -1,5 +1,7 @@
 package fi.iki.elonen;
 
+import android.util.Log;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FilenameFilter;
@@ -17,6 +19,7 @@ import java.util.StringTokenizer;
 
 
 public class SimpleWebServer extends fi.iki.elonen.NanoHTTPD {
+    private static String TAG="SimpleWebServer";
     /**
      * Hashtable mapping (String)FILENAME_EXTENSION -> (String)MIME_TYPE
      */
@@ -158,6 +161,8 @@ public class SimpleWebServer extends fi.iki.elonen.NanoHTTPD {
                     f = new File(homeDir, uri + "/index.htm");
                 } else if (f.canRead()) {
                     // No index file, list the directory if it is readable
+                    //直接列举整个目录
+                    Log.e(TAG," res = new Response(listDirectory(uri, f));");
                     res = new Response(listDirectory(uri, f));
                 } else {
                     res = new Response(Response.Status.FORBIDDEN, fi.iki.elonen.NanoHTTPD.MIME_PLAINTEXT, "FORBIDDEN: No directory listing.");
@@ -185,8 +190,18 @@ public class SimpleWebServer extends fi.iki.elonen.NanoHTTPD {
         return res;
     }
 
+    //f里头有path，远程播放确实是要走这个的
     protected Response serveFile(File f, String mime, Map<String, String> header)
     {
+        //绝对路径是啥？
+        /*
+         07-21 16:02:17.876: E/SimpleWebServer(12539): f.getAbsolutePath()
+          [/storage/emulated/0/music/juejiang.mp3]
+           f.getPath() [/storage/emulated/0/music/juejiang.mp3]
+           这俩路径居然是一样的
+        */
+
+        Log.e(TAG, "f.getAbsolutePath() ["+f.getAbsolutePath()+"]  f.getPath() ["+f.getPath()+"]");
         Response res = null;
 
         try {
@@ -217,6 +232,7 @@ public class SimpleWebServer extends fi.iki.elonen.NanoHTTPD {
                 if (startFrom >= fileLen) {
                     res = new Response(Response.Status.RANGE_NOT_SATISFIABLE, fi.iki.elonen.NanoHTTPD.MIME_PLAINTEXT, "");
                     res.addHeader("Content-Range", "bytes 0-0/" + fileLen);
+                    //这些文件信息被加入到文件头部了
                     res.addHeader("ETag", etag);
                 } else {
                     if (endAt < 0) {
@@ -228,6 +244,7 @@ public class SimpleWebServer extends fi.iki.elonen.NanoHTTPD {
                     }
 
                     final long dataLen = newLen;
+                    //通过f创建了一个输入流
                     FileInputStream fis = new FileInputStream(f) {
                         @Override
                         public int available() throws IOException {
@@ -236,6 +253,7 @@ public class SimpleWebServer extends fi.iki.elonen.NanoHTTPD {
                     };
                     fis.skip(startFrom);
 
+                    //输入流被传出去了，f没有
                     res = new Response(Response.Status.PARTIAL_CONTENT, mime, fis);
                     res.addHeader("Content-Length", "" + dataLen);
                     res.addHeader("Content-Range", "bytes " + startFrom + "-" + endAt + "/" + fileLen);
@@ -352,7 +370,7 @@ public class SimpleWebServer extends fi.iki.elonen.NanoHTTPD {
         return serveFile(uri, header, getRootDir());
     }
 
-    /**
+    /**作为一个独立的文件服务器启动
      * Starts as a standalone file server and waits for Enter.
      */
     public static void main(String[] args) {

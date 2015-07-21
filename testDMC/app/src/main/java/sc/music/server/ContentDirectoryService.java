@@ -93,6 +93,7 @@ public class ContentDirectoryService extends AbstractContentDirectoryService/*cl
 
         try
         {
+            /*cling的库*/
             DIDLContent didl = new DIDLContent();
             TextUtils.StringSplitter ss = new TextUtils.SimpleStringSplitter(SEPARATOR);
             ss.setString(objectID);
@@ -265,7 +266,7 @@ public class ContentDirectoryService extends AbstractContentDirectoryService/*cl
                 Log.d(TAG, "List item...");
 
                 //把container的所有item加入didl
-                // Then get item
+                // Then get item,从AudioContainer中获取到这些item
                 for(Item i : container.getItems())
                     didl.addItem(i);
 

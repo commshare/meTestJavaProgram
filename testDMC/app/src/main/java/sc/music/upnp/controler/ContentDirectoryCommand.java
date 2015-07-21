@@ -50,6 +50,7 @@ import sc.music.upnp.cling.didl.ClingDIDLItem;
 import sc.music.upnp.cling.didl.ClingDIDLParentContainer;
 import sc.music.upnp.cling.didl.ClingImageItem;
 import sc.music.upnp.cling.didl.ClingVideoItem;
+import sc.music.upnp.localcontent.SCMusicTrack;
 import sc.music.upnp.model.IContentDirectoryCommand;
 
 @SuppressWarnings("rawtypes")
@@ -83,6 +84,7 @@ public class ContentDirectoryCommand implements IContentDirectoryCommand
 				new UDAServiceType("ContentDirectory"));
 	}
 
+//	在这里构造cling的DIDLObject对象的列表
 	private ArrayList<DIDLObjectDisplay> buildContentList(String parent, DIDLContent didl)
 	{
 		ArrayList<DIDLObjectDisplay> list = new ArrayList<DIDLObjectDisplay>();
@@ -97,20 +99,28 @@ public class ContentDirectoryCommand implements IContentDirectoryCommand
 			Log.v(TAG, "Add container : " + item.getTitle());
 		}
 
-		for (Item item : didl.getItems())
+		//这个item是cling的DIDLObject类型的
+		for (Item/*cling的*/ item : didl.getItems())
 		{
 			ClingDIDLItem clingItem = null;
+			ClingDIDLItem audioClingItem = null;
 			if(item instanceof VideoItem)
 				clingItem = new ClingVideoItem((VideoItem)item);
-			else if(item instanceof AudioItem)
-				clingItem = new ClingAudioItem((AudioItem)item);
+			else if(item instanceof AudioItem) {
+
+				//clingItem =
+				clingItem=new ClingAudioItem((AudioItem) item);//AudioItem
+				Log.e(TAG,"=###==create ClingAudioItem,localpath ["+ clingItem.getLocalpath()+"]");
+			}
 			else if(item instanceof ImageItem)
 				clingItem = new ClingImageItem((ImageItem)item);
 			else
 				clingItem = new ClingDIDLItem(item);
 
+			/*DIDLObjectDisplay
+			* */
 			list.add(new DIDLObjectDisplay(clingItem));
-			Log.v(TAG, "Add item : " + item.getTitle());
+			Log.e(TAG, "=====Add item====== : " + item.getTitle()+"localpath ["+clingItem.getLocalpath()+"]");
 
 			for (DIDLObject.Property p : item.getProperties())
 				Log.v(TAG, p.getDescriptorName() + " " + p.toString());

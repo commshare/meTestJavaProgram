@@ -34,8 +34,9 @@ public class ClingDIDLItem extends ClingDIDLObject implements IDIDLItem {
 
 	private static final String TAG = "ClingDIDLItem";
 
-	public ClingDIDLItem(Item item)
+	public ClingDIDLItem(Item/*cling的*/ item)
 	{
+		/*父类要求传入的是DIDLObject 对象，这也是cling库的*/
 		super(item);
 	}
 
@@ -45,12 +46,20 @@ public class ClingDIDLItem extends ClingDIDLObject implements IDIDLItem {
 		return R.drawable.ic_file;
 	}
 
+//	@Override //新加入的
+//	public String getLocalpath() {
+//
+//			Log.e(TAG,"ClingDIDLItem getLocalpath");
+//		return null;
+//	}
+
 	@Override
 	public String getURI()
 	{
 		if (item != null)
 		{
-			Log.d(TAG, "Item : " + item.getFirstResource().getValue());
+			//居然是从res列表取出第一个res，然后得到value值
+			Log.d(TAG, "getURI from Item : " + item.getFirstResource().getValue());
 			if (item.getFirstResource() != null && item.getFirstResource().getValue() != null)
 				return item.getFirstResource().getValue();
 		}

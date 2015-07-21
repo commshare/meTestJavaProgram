@@ -20,7 +20,10 @@
 package sc.music.upnp.cling.didl;
 
 
+import android.util.Log;
+
 import org.fourthline.cling.support.model.DIDLObject;
+import org.fourthline.cling.support.model.item.AudioItem;
 
 import sc.music.upnp.didl.IDIDLObject;
 
@@ -28,13 +31,14 @@ public class ClingDIDLObject implements IDIDLObject {
 
 	private static final String TAG = "ClingDIDLObject";
 
-	protected DIDLObject item;
+	protected DIDLObject/*cling的*/ item;
 
 	public ClingDIDLObject(DIDLObject item)
 	{
 		this.item = item;
 	}
 
+	//从这里获取到一个cling库的DIDLObject
 	public DIDLObject getObject()
 	{
 		return item;
@@ -80,5 +84,14 @@ public class ClingDIDLObject implements IDIDLObject {
 	public String getId()
 	{
 		return item.getId();
+	}
+
+	//新加入的,ClingAudioItem中有实现
+	@Override
+	public String getLocalpath() {
+
+		Log.e(TAG, "ClingDIDLObject getLocalpath");
+
+		return null;
 	}
 }

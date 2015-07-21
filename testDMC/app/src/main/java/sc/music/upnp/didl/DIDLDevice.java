@@ -73,4 +73,9 @@ public class DIDLDevice implements IDIDLObject {
 	public String getId() {
 		return "";
 	}
+
+	@Override
+	public String getLocalpath() {
+		return null;
+	}
 }

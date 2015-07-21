@@ -67,4 +67,8 @@ public class DIDLObjectDisplay {
 
 		return didl.getTitle();
 	}
+	public String getLocalPath()
+	{
+		return didl.getLocalpath();
+	}
 }
