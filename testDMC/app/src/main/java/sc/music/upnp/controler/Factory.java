@@ -64,6 +64,16 @@ public class Factory implements IFactory {
 
 		return null;
 	}
+	//add by me 20150722
+	public  ControlPoint getControlPoint(){
+		AndroidUpnpService aus = ((ServiceListener) Main.upnpServiceController.getServiceListener()).getUpnpService();
+		ControlPoint cp = null;
+		if (aus != null)
+			cp = aus.getControlPoint();
+		if(cp!=null)
+			return cp;
+		return null;
+	}
 
 	@Override
 	public IUpnpServiceController createUpnpServiceController(Context ctx)

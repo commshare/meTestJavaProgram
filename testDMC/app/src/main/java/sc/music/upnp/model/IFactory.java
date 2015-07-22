@@ -21,6 +21,8 @@ package sc.music.upnp.model;
 
 import android.content.Context;
 
+import org.fourthline.cling.controlpoint.ControlPoint;
+
 import sc.music.upnp.controler.IUpnpServiceController;
 
 
@@ -32,4 +34,7 @@ public interface IFactory {
 	public ARendererState createRendererState();
 
 	public IRendererCommand createRendererCommand(IRendererState rs);
+
+	//有破坏力啊，因为这个是cling的库，其他都是自定义的Interface
+	public ControlPoint getControlPoint();
 }

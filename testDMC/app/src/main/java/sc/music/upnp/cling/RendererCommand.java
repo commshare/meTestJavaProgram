@@ -187,7 +187,7 @@ public class RendererCommand implements Runnable, IRendererCommand {
 	}
 
 	@Override
-	public void commandToggle()//状态切换
+	public void commandToggle()//状态切换，play和pause的切换
 	{
 		RendererState.State state = rendererState.getState();
 		if (state == RendererState.State.PLAY)

@@ -146,6 +146,10 @@ public class MediaServer extends fi.iki.elonen.SimpleWebServer{
             if (dot >= 0)
                 id = id.substring(0,dot);
 
+            /*
+            * 07-22 16:39:08.929: E/MediaServer(2749): uri is a id [/a-8068.mp3]
+07-22 16:39:08.929: V/MediaServer(2749): media of id is 8068
+*/
             // Try to get media id
             int mediaId = Integer.parseInt(id.substring(3));
             Log.v(TAG, "media of id is " + mediaId);
@@ -188,7 +192,7 @@ public class MediaServer extends fi.iki.elonen.SimpleWebServer{
                     mime = cursor.getString(cursor.getColumnIndexOrThrow(mediaColumns.MIME_TYPE));
                 }
                 cursor.close();
-
+                Log.e(TAG,"get path "+path+"]");
                 if(path!=null) //有path的啊
                     return new ServerObject(path, mime);
             }
@@ -222,6 +226,8 @@ public class MediaServer extends fi.iki.elonen.SimpleWebServer{
         {
             try
             {
+                //uri是一个id
+                Log.e(TAG,"uri is a id ["+uri+"]");
                 ServerObject obj = getFileServerObject(uri);
                 //这个时候，文件路径还在的
                 Log.e(TAG, "Will serve path[ " + obj.path+"]");

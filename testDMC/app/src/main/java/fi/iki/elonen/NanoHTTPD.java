@@ -1,5 +1,7 @@
 package fi.iki.elonen;
 
+import android.util.Log;
+
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.Closeable;
@@ -76,6 +78,7 @@ import java.util.TimeZone;
  * See the separate "LICENSE.md" file for the distribution license (Modified BSD licence)
  */
 public abstract class NanoHTTPD {
+    private String TAG="NanoHTTPD";
     /**
      * Common mime type for dynamic content: plain text
      */
@@ -211,6 +214,7 @@ public abstract class NanoHTTPD {
         }
 
         String uri = session.getUri();
+        Log.e(TAG, "session.getUri() [" + uri + "]");
         Method method = session.getMethod();
         Map<String, String> parms = session.getParms();
         Map<String, String> headers = session.getHeaders();

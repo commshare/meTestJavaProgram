@@ -122,10 +122,12 @@ public class RendererFragmentLY extends Fragment implements Observer
 	public void onResume()
 	{
 		super.onResume();
-		startControlPoint();
+		if(Main.checkActiveDmc()) {
+			startControlPoint();
 
-		if (rendererCommand != null)
-			rendererCommand.resume();
+			if (rendererCommand != null)
+				rendererCommand.resume();
+		}
 	}
 
 	@Override
@@ -147,6 +149,7 @@ public class RendererFragmentLY extends Fragment implements Observer
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	{
+		Log.e(TAG,"onCreateView inflate (R.layout.renderer_fragment_ly");
 		//这是直接加载一个布局文件名字
 		return inflater.inflate(R.layout.renderer_fragment_ly, container, false);
 	}

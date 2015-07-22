@@ -645,6 +645,7 @@ public class ContentDirectoryFragment extends ListFragment implements Observer
 	{
 		if(Main.upnpServiceController.isLocalDmr()){
 			Log.e(TAG,"launch localdmr");
+			Main.myrender.launchItem(uri);
 		}else {
 			Log.e(TAG,"launch remotedmr");
 			IRendererCommand rendererCommand = Main.factory.createRendererCommand(Main.factory.createRendererState());

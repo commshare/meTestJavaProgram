@@ -23,7 +23,10 @@ package sc.music.ui.fragment;
 
 		import android.app.Activity;
 		import android.app.Fragment;
+		import android.content.Context;
 		import android.graphics.Color;
+		import android.media.MediaPlayer;
+		import android.net.Uri;
 		import android.os.Bundle;
 		import android.os.Handler;
 		import android.util.Log;
@@ -45,12 +48,14 @@ package sc.music.ui.fragment;
 
 		import sc.droid.dmc.R;
 		import sc.music.Main;
+		import sc.music.Render.AudioWife;
+		import sc.music.Render.LocalRender;
 		import sc.music.upnp.cling.RendererState;
 		import sc.music.upnp.model.ARendererState;
 		import sc.music.upnp.model.IRendererCommand;
 		import sc.music.upnp.model.IUpnpDevice;
 
-public class RendererFragment extends Fragment implements Observer
+public class RendererFragment extends Fragment implements Observer,LocalRender.IUIRenderControl
 {
 	private static final String TAG = "RendererFragment";
 
@@ -59,16 +64,18 @@ public class RendererFragment extends Fragment implements Observer
 	private IRendererCommand rendererCommand;
 
 	// NowPlaying Slide
-	private ImageView stopButton;
-	private ImageView play_pauseButton;
-	private ImageView volumeButton;
+	private ImageView stopButton;//停止
+	private ImageView play_pauseButton;//播放暂停
+	private ImageView volumeButton;//静音
 
 	// Settings Slide
-	SeekBar progressBar;
-	SeekBar volume;
+	SeekBar progressBar; //进度
+	SeekBar volume; //音量
 
-	TextView duration;
-	boolean durationRemaining;
+	TextView duration; //总时间
+	boolean durationRemaining;//剩余时间
+
+	private Context mContext;
 
 	public RendererFragment()
 	{
@@ -99,8 +106,12 @@ public class RendererFragment extends Fragment implements Observer
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState)
 	{
+		Log.e(TAG, "RenderFragment onActivityCreated");//看来当前用的还是这个
 		super.onActivityCreated(savedInstanceState);
 
+		//for audio wife
+		mContext=getActivity().getApplicationContext();
+		Main.myrender.setUIRenderControler(this);
 		// Listen to renderer change
 		if (Main.upnpServiceController != null)
 			Main.upnpServiceController.addSelectedRendererObserver(this);
@@ -124,25 +135,31 @@ public class RendererFragment extends Fragment implements Observer
 	public void onResume()
 	{
 		super.onResume();
-		startControlPoint();
+		if(Main.checkActiveDmc()) {
+			startControlPoint();
 
-		if (rendererCommand != null)
-			rendererCommand.resume();
+			if (rendererCommand != null)
+				rendererCommand.resume();
+		}
 	}
 
 	@Override
 	public void onPause()
 	{
 		device = null;
-		if (rendererCommand != null)
-			rendererCommand.pause();
+		if(Main.checkActiveDmc()) {
+			if (rendererCommand != null)
+				rendererCommand.pause();
+		}
 		super.onPause();
 	}
 
 	@Override
 	public void onDestroy()
 	{
-		Main.upnpServiceController.delSelectedRendererObserver(this);
+		if(Main.checkActiveDmc()) {
+			Main.upnpServiceController.delSelectedRendererObserver(this);
+		}
 		super.onDestroy();
 	}
 
@@ -154,8 +171,10 @@ public class RendererFragment extends Fragment implements Observer
 
 	public void startControlPoint()
 	{
+		//没有选中dmr的情况下
 		if (Main.upnpServiceController.getSelectedRenderer() == null)
 		{
+			//也没有之前的dmr，会隐藏掉播控UI
 			if (device != null)
 			{
 				Log.i(TAG, "Current renderer have been removed");
@@ -165,6 +184,7 @@ public class RendererFragment extends Fragment implements Observer
 				if (a == null)
 					return;
 
+				//这个线程会一直跑么？
 				a.runOnUiThread(new Runnable() {
 					@Override
 					public void run()
@@ -180,6 +200,7 @@ public class RendererFragment extends Fragment implements Observer
 			return;
 		}
 
+		//当有了设备或者已经在播放了
 		if (device == null || rendererState == null || rendererCommand == null
 				|| !device.equals(Main.upnpServiceController.getSelectedRenderer()))
 		{
@@ -187,6 +208,7 @@ public class RendererFragment extends Fragment implements Observer
 
 			Log.i(TAG, "Renderer changed !!! " + Main.upnpServiceController.getSelectedRenderer().getDisplayString());
 
+			//播控来了
 			rendererState = Main.factory.createRendererState();
 			rendererCommand = Main.factory.createRendererCommand(rendererState);
 
@@ -201,6 +223,7 @@ public class RendererFragment extends Fragment implements Observer
 			rendererState.addObserver(this);
 			rendererCommand.updateFull();
 		}
+		//在这里搞？更新UI 啥的
 		updateRenderer();
 	}
 
@@ -243,6 +266,7 @@ public class RendererFragment extends Fragment implements Observer
 						artist.setText(rendererState.getArtist());
 
 						if (rendererState.getState() == RendererState.State.PLAY) {
+							//原来是在这里切换为pause图标的
 							play_pauseButton.setImageResource(R.drawable.pause);
 							play_pauseButton.setContentDescription(getResources().getString(R.string.pause));
 						} else {
@@ -270,12 +294,14 @@ public class RendererFragment extends Fragment implements Observer
 	@Override
 	public void update(Observable observable, Object data)
 	{
-		startControlPoint();
+
+		if(Main.checkActiveDmc())
+			startControlPoint();
 	}
 
 	private void init()
 	{
-		SetupButtons();
+		SetupButtons();//设置ui
 		SetupButtonListeners();
 	}
 
@@ -289,6 +315,51 @@ public class RendererFragment extends Fragment implements Observer
 		volume = (SeekBar) getActivity().findViewById(R.id.volume);
 		volume.setVisibility(View.INVISIBLE);
 		volumeButton.setVisibility(View.INVISIBLE);
+	}
+
+	@Override
+	public void onLocalRenderStartPlay(final Context ctx, String path) {
+		Log.e(TAG,"onLocalRenderStartPlay");
+		final Activity a = getActivity();
+		if (a == null)
+			return;
+		TextView durationElapse = (TextView) a.findViewById(R.id.trackDurationElapse);
+		TextView durationRemain = (TextView) a.findViewById(R.id.trackDurationRemaining);
+		Log.e(TAG,"we got realpath ["+path+"]");
+		AudioWife.getInstance().init(ctx, Uri.parse(path))
+				.setPlayView(play_pauseButton)
+				.setPauseView(play_pauseButton)
+				.setSeekBar(progressBar)
+				.setRuntimeView(durationElapse)
+				.setTotalTimeView(durationRemain);
+
+		AudioWife.getInstance().addOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+
+			@Override
+			public void onCompletion(MediaPlayer mp) {
+				Toast.makeText(ctx, "Completed", Toast.LENGTH_SHORT).show();
+				// do you stuff.
+			}
+		});
+
+		AudioWife.getInstance().addOnPlayClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Toast.makeText(ctx, "Play", Toast.LENGTH_SHORT).show();
+				// get-set-go. Lets dance.
+			}
+		});
+
+		AudioWife.getInstance().addOnPauseClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Toast.makeText(ctx, "Pause", Toast.LENGTH_SHORT).show();
+				// Your on audio pause stuff.
+			}
+		});
+
 	}
 
 	public abstract class ButtonCallback implements Callable<Void>
@@ -383,6 +454,7 @@ public class RendererFragment extends Fragment implements Observer
 	{
 		if (play_pauseButton != null)
 		{
+			//播放还是暂停？
 			play_pauseButton.setOnClickListener(new OnClickListener() {
 				@Override
 				public void onClick(View v)
@@ -489,6 +561,7 @@ public class RendererFragment extends Fragment implements Observer
 			});
 		}
 
+		//剩余时间
 		duration = (TextView) getActivity().findViewById(R.id.trackDurationRemaining);
 		if (duration != null)
 		{

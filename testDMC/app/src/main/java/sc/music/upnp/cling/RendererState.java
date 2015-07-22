@@ -131,7 +131,7 @@ public class RendererState extends ARendererState {
 
 	}
 
-	public MediaInfo getMediaInfo()
+	public MediaInfo/*cling库的*/ getMediaInfo()
 	{
 		return mediaInfo;
 	}

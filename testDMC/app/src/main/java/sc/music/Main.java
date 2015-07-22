@@ -32,6 +32,7 @@ import com.xwj.toolbardemo.BaseCardFragment;
 
 import sc.droid.dmc.R;
 import sc.music.Render.LocalDMR;
+import sc.music.Render.LocalRender;
 import sc.music.ui.activity.SettingsActivity;
 import sc.music.ui.fragment.ContentDirectoryFragment;
 import sc.music.ui.fragment.NavigationDrawerCallbacks;
@@ -53,6 +54,7 @@ public class Main extends /*ActionBarActivity废弃*/AppCompatActivity  implemen
     private String TAG="scdmc.Main";
     // Controller
     public static IUpnpServiceController/*这是一个接口*/ upnpServiceController = null;
+    private static boolean isActiveDmc=false;
     public static IFactory factory = null;
     private CharSequence mTitle;
     private DrawerLayout mDrawerLayout;//抽屉
@@ -61,6 +63,8 @@ public class Main extends /*ActionBarActivity废弃*/AppCompatActivity  implemen
     private PagerSlidingTabStrip mPagerSlidingTabStrip;
     private ViewPager mViewPager;
     private Toolbar mToolbar; //工具条
+    LocalDMR mydmr;
+    public static LocalRender myrender;
 
     //直接分配一次内存，是不是重复了啊
     private List<Fragment> mFragmentList ;
@@ -84,14 +88,19 @@ public class Main extends /*ActionBarActivity废弃*/AppCompatActivity  implemen
 
     //////////////////////////////////////////////////
     Context mContext;
+    public static boolean checkActiveDmc(){
+        return isActiveDmc;
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mContext = this;    // since Activity extends Context
         Log.d(TAG, "onCreated : " + savedInstanceState + factory + upnpServiceController);
 
-        LocalDMR mydmr=new LocalDMR();
+         mydmr=new LocalDMR();
+        myrender=new LocalRender(mContext);
         //当启用dlna，打开factory构造层控制点
+        isActiveDmc=true;
 
         // Use cling factory
         if (factory == null)//实现dmc的
