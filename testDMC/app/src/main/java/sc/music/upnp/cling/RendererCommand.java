@@ -121,7 +121,7 @@ public class RendererCommand implements Runnable, IRendererCommand {
 	}
 
 	@Override
-	public void commandPlay()
+	public void commandPlay()//播放
 	{
 		if (getAVTransportService() == null)
 			return;
@@ -143,7 +143,7 @@ public class RendererCommand implements Runnable, IRendererCommand {
 	}
 
 	@Override
-	public void commandStop()
+	public void commandStop()//停止
 	{
 		if (getAVTransportService() == null)
 			return;
@@ -165,7 +165,7 @@ public class RendererCommand implements Runnable, IRendererCommand {
 	}
 
 	@Override
-	public void commandPause()
+	public void commandPause()//暂停
 	{
 		if (getAVTransportService() == null)
 			return;
@@ -187,7 +187,7 @@ public class RendererCommand implements Runnable, IRendererCommand {
 	}
 
 	@Override
-	public void commandToggle()
+	public void commandToggle()//状态切换
 	{
 		RendererState.State state = rendererState.getState();
 		if (state == RendererState.State.PLAY)
@@ -201,7 +201,7 @@ public class RendererCommand implements Runnable, IRendererCommand {
 	}
 
 	@Override
-	public void commandSeek(String relativeTimeTarget)
+	public void commandSeek(String relativeTimeTarget)//跳转
 	{
 		if (getAVTransportService() == null)
 			return;
@@ -225,7 +225,7 @@ public class RendererCommand implements Runnable, IRendererCommand {
 	}
 
 	@Override
-	public void setVolume(final int volume)
+	public void setVolume(final int volume)//设置音量
 	{
 		if (getRenderingControlService() == null)
 			return;
@@ -248,7 +248,7 @@ public class RendererCommand implements Runnable, IRendererCommand {
 	}
 
 	@Override
-	public void setMute(final boolean mute)
+	public void setMute(final boolean mute)//静音
 	{
 		if (getRenderingControlService() == null)
 			return;
@@ -273,12 +273,14 @@ public class RendererCommand implements Runnable, IRendererCommand {
 	public void toggleMute()
 	{
 		setMute(!rendererState.isMute());
-	}
+	}//切换静音
 
+	//最后通过这里启动播放
 	public void setURI(String uri, TrackMetadata trackMetadata)
 	{
 		Log.i(TAG, "Set uri to " + uri);
 
+		//这是发给dmr了，从此开始控制dmr
 		controlPoint.execute(new SetAVTransportURI(getAVTransportService(), uri, trackMetadata.getXML()) {
 
 			@Override
@@ -295,6 +297,7 @@ public class RendererCommand implements Runnable, IRendererCommand {
 		});
 	}
 
+	//首先调用这个
 	@Override
 	public void launchItem(final IDIDLItem item)
 	{
@@ -332,9 +335,10 @@ public class RendererCommand implements Runnable, IRendererCommand {
 		final TrackMetadata trackMetadata = new TrackMetadata(upnpItem.getId(), upnpItem.getTitle(),
 				upnpItem.getCreator(), "", "", upnpItem.getFirstResource().getValue(),
 				"object.item." + type);
-
+		Log.e(TAG,"url : upnpItem.getFirstResource().getValue() : ["+upnpItem.getFirstResource().getValue()+"]");
 		Log.i(TAG, "TrackMetadata : "+trackMetadata.toString());
 
+		//重新播放之前，首先暂停
 		// Stop playback before setting URI
 		controlPoint.execute(new Stop(getAVTransportService()) {
 			@Override
@@ -389,7 +393,7 @@ public class RendererCommand implements Runnable, IRendererCommand {
 		});
 	}
 
-	public void updatePositionInfo()
+	public void updatePositionInfo()//更新当前的位置
 	{
 		if (getAVTransportService() == null)
 			return;
@@ -410,7 +414,7 @@ public class RendererCommand implements Runnable, IRendererCommand {
 		});
 	}
 
-	public void updateTransportInfo()
+	public void updateTransportInfo()//更新传输信息
 	{
 		if (getAVTransportService() == null)
 			return;
@@ -432,7 +436,7 @@ public class RendererCommand implements Runnable, IRendererCommand {
 	}
 
 	@Override
-	public void updateVolume()
+	public void updateVolume()//更新音量
 	{
 		if (getRenderingControlService() == null)
 			return;

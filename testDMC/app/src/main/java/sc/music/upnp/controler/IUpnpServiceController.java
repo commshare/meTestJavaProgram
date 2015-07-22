@@ -42,8 +42,15 @@ public interface IUpnpServiceController {
 	public IUpnpDevice getSelectedRenderer();
 
 	public IUpnpDevice getSelectedContentDirectory();
+	//20150722
+	public void addLocalDmr(IUpnpDevice dmr);
+	public IUpnpDevice getLocadDmr();
 
-	public void addSelectedRendererObserver(Observer o);
+	public void LockLocalRender();
+	public void UnlockLocalRender();
+	public boolean isLocalDmr();
+
+		public void addSelectedRendererObserver(Observer o);
 
 	public void delSelectedRendererObserver(Observer o);
 

@@ -31,6 +31,7 @@ import android.widget.Toast;
 import com.xwj.toolbardemo.BaseCardFragment;
 
 import sc.droid.dmc.R;
+import sc.music.Render.LocalDMR;
 import sc.music.ui.activity.SettingsActivity;
 import sc.music.ui.fragment.ContentDirectoryFragment;
 import sc.music.ui.fragment.NavigationDrawerCallbacks;
@@ -89,13 +90,21 @@ public class Main extends /*ActionBarActivity废弃*/AppCompatActivity  implemen
         mContext = this;    // since Activity extends Context
         Log.d(TAG, "onCreated : " + savedInstanceState + factory + upnpServiceController);
 
+        LocalDMR mydmr=new LocalDMR();
+        //当启用dlna，打开factory构造层控制点
+
         // Use cling factory
         if (factory == null)//实现dmc的
             factory = new sc.music.upnp.controler.Factory();
 
         // Upnp service
-        if (upnpServiceController == null)
+        if (upnpServiceController == null) {
             upnpServiceController = factory.createUpnpServiceController(this);
+            //控制点开启后，传递dmr进去
+            if (upnpServiceController != null){
+                upnpServiceController.addLocalDmr(mydmr);
+            }
+        }
         /**
          * DrawerLayout不覆盖Toolbar
          */

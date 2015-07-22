@@ -30,6 +30,7 @@ import org.fourthline.cling.model.meta.LocalDevice;
 import sc.music.upnp.cling.ServiceListener;
 import sc.music.upnp.cling.UpnpService;
 import sc.music.upnp.cling.UpnpServiceController;
+import sc.music.upnp.model.IUpnpDevice;
 
 //这还是个实际的服务类
 public class ServiceController extends UpnpServiceController
@@ -78,6 +79,7 @@ public class ServiceController extends UpnpServiceController
 		activity.bindService(new Intent(activity,/*自己的*/ UpnpService.class), upnpServiceListener.getServiceConnexion(),
 				Context.BIND_AUTO_CREATE);
 	}
+
 
 	//注册本地设备
 	@Override

@@ -603,7 +603,7 @@ public class ContentDirectoryFragment extends ListFragment implements Observer
 	private void launchURI(final IDIDLItem uri)
 	{
 	//	if (Main.upnpServiceController.getSelectedRenderer() == null)
-        //每次都弹出
+        //每次都弹出选择dmr的对话框
         if(true)
 		{
 			// No renderer selected yet, open a popup to select one
@@ -614,6 +614,7 @@ public class ContentDirectoryFragment extends ListFragment implements Observer
 					@Override
 					public void run() {
 						try {
+							//dmr选择对话框叫做RendererDialog
 							RendererDialog rendererDialog = new RendererDialog();
 							rendererDialog.setCallback(new Callable<Void>() {
 								@Override
@@ -642,8 +643,13 @@ public class ContentDirectoryFragment extends ListFragment implements Observer
     //居然在这里控制dmr
 	private void launchURIRenderer(IDIDLItem uri)
 	{
-		IRendererCommand rendererCommand = Main.factory.createRendererCommand(Main.factory.createRendererState());
-		rendererCommand.launchItem(uri);
+		if(Main.upnpServiceController.isLocalDmr()){
+			Log.e(TAG,"launch localdmr");
+		}else {
+			Log.e(TAG,"launch remotedmr");
+			IRendererCommand rendererCommand = Main.factory.createRendererCommand(Main.factory.createRendererState());
+			rendererCommand.launchItem(uri);
+		}
 }
 
 	@Override
@@ -685,7 +691,7 @@ public class ContentDirectoryFragment extends ListFragment implements Observer
 	public synchronized void screfresh()
 	{
 		device=this.localdevice;
-		setEmptyText("refresh..."+getString(R.string.loading));
+		setEmptyText("myrefresh..."+getString(R.string.loading));
 
 		final Activity a = getActivity();
 		if(a!=null) {

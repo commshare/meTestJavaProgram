@@ -109,7 +109,24 @@ public abstract class UpnpServiceController implements IUpnpServiceController {
 		this.contentDirectory = contentDirectory;
 		contentDirectoryObservable.notifyAllObservers();
 	}
-
+	//add by me 20150722
+	private boolean isLocalDmr=false;
+	public void LockLocalRender(){
+		isLocalDmr=true;
+	}
+	public void UnlockLocalRender(){
+		isLocalDmr=false;
+	}
+	public boolean isLocalDmr(){
+		return isLocalDmr;
+	}
+	private IUpnpDevice localdmr;
+	public void addLocalDmr(IUpnpDevice localdmr){
+		this.localdmr=localdmr;
+	}
+	public IUpnpDevice getLocadDmr(){
+		return localdmr;
+	}
 	@Override
 	public IUpnpDevice getSelectedRenderer()
 	{

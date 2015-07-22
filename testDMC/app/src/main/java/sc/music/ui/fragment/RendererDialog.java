@@ -36,9 +36,14 @@ public class RendererDialog extends DialogFragment {
 
 		ArrayList<DeviceDisplay> list = new ArrayList<DeviceDisplay>();
 		//创建一个类，叫做LocalDMR，可用来构造DeviceDisplay
-		LocalDMR mydmr=new LocalDMR();
-		//首先加入我自己的本地设备
-		list.add(new DeviceDisplay(mydmr));
+	//	LocalDMR mydmr=new LocalDMR();
+		//这样就不用每次都创建一个了
+		LocalDMR mydmr=(LocalDMR)Main.upnpServiceController.getLocadDmr();
+		if(mydmr!=null)
+			//首先加入我自己的本地设备
+			list.add(new DeviceDisplay(mydmr));
+		else
+			Log.e(TAG,"NOT FOUND localdmr");
 		for (IUpnpDevice upnpDevice : upnpDevices)
 			list.add(new DeviceDisplay(upnpDevice));
 
@@ -65,8 +70,12 @@ public class RendererDialog extends DialogFragment {
 				public void onClick(DialogInterface dialog, int which) {
 					if(which ==0 ){
 						Log.e(TAG,"LocalDMR");
+						//这是告诉dmc，当前是localdmr啊，不过没有设置为locadmr，现在我还不敢
+						Main.upnpServiceController.LockLocalRender();
 					}
 					else {
+						//先解锁
+						Main.upnpServiceController.UnlockLocalRender();
 						int newWhich=which-1;
 						//还是要传递给给dmc啊，还是信任自己拿到的upnpDevices啊
 						Main.upnpServiceController.setSelectedRenderer((IUpnpDevice) upnpDevices.toArray()[newWhich]);
